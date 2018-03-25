@@ -18,4 +18,8 @@ public class ElementoMenu {
         return a;
     }
 
+    @Override
+    public String toString() {
+        return a +"\nPrezzo: "+prezzo+"\n";
+    }
 }

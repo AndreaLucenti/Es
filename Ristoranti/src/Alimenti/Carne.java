@@ -23,4 +23,9 @@ public class Carne extends Alimento {
     public String getAnimale() {
         return Animale;
     }
+
+    @Override
+    public String toString() {
+        return "\nNome: "+getNome()+ "\nAnimale: "+ getAnimale() +"\nPrezzo: "+getPezzo() ;
+    }
 }

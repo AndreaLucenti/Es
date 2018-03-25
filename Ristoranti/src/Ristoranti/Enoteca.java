@@ -21,16 +21,26 @@ public class Enoteca extends  EsRistoraz{
         return menu;
     }
 
-    public boolean Add(ElementoMenu el){
-        if(menu.AddEl(el) && (el.getAlimento() instanceof Vino)){
-            return true;
+    public boolean Add(Alimento A1, double Prezzo){
+        ElementoMenu el = new ElementoMenu(Prezzo, A1);
+        if((el.getAlimento() instanceof Vino)){
+            if(menu.AddEl(el)) {
+                return true;
+            }
         }
         return false;
     }
-    public boolean Rem(ElementoMenu el){
+    public boolean Rem(Alimento A1, double Prezzo){
+        ElementoMenu el = new ElementoMenu(Prezzo, A1);
         if(menu.RemEl(el)){
             return true;
         }
         return false;
+    }
+
+    public String toString() {
+        Menu m = menu;
+        String s = m.toString();
+        return s;
     }
 }
