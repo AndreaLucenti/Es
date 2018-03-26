@@ -2,6 +2,10 @@ package Ristoranti;
 import Alimenti.Alimento;
 import Menu.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Ristorante extends EsRistoraz{
     private String nome;
     private Menu menu;
@@ -41,4 +45,5 @@ public class Ristorante extends EsRistoraz{
         String s = m.toString();
         return s;
     }
+
 }
