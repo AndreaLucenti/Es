@@ -8,13 +8,22 @@ import javax.imageio.IIOException;
 import java.io.*;
 
 public class ReadF {
-
+    private PartitaCalcio Pc;
     private PartitaVolley Pv;
-    public void lettura(String nome, PartitaCalcio Pc){
+
+    public void lettura(String nome, AbsPartita A){
+
+
         File f = new File(nome+".txt");
         try{
             FileReader r = new FileReader(f);
             BufferedReader br = new BufferedReader(r);
+            if(PoV(br)){
+                Pc = new PartitaCalcio(A.getNomeCasa(), A.getNomeOspiti());
+            }
+            else{
+                Pv = new PartitaVolley(A.getNomeCasa(), A.getNomeOspiti());
+            }
             while(br.ready()){
                 String Line = br.readLine();
                 String[] LineSplit = Line.split("\t");
@@ -34,5 +43,16 @@ public class ReadF {
         }catch (IOException e){
             System.out.println("err2");
         }
+    }
+
+    public boolean PoV(BufferedReader br){
+        try{
+            String Line = br.readLine();
+            String[] LineSplit = Line.split("\t");
+            if(LineSplit[0].charAt(0) == 'C'){
+                return true;
+            }
+        }catch (IOException e){}
+        return false;
     }
 }

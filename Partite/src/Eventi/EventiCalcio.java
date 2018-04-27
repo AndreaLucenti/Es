@@ -29,11 +29,11 @@ public class EventiCalcio {
             return true;
         }
         if(cod.equals("C-98")){
-
             return true;
         }
         if(cod.equals("C-99")){
             System.out.println("Fine partita");
+            System.out.println(p);
             return true;
         }
         return false;
