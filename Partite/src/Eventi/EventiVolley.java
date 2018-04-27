@@ -8,14 +8,13 @@ public class EventiVolley{
     public boolean Eventi(String cod, PartitaVolley p){
 
         if(cod.equals("V-00")){
-            p.setSet();
             return true;
         }
         if(cod.equals("V-01")){
-            p.setSet();
             return true;
         }
         if(cod.equals("V-02")){
+            p.setSet();
             return true;
         }
         if(cod.equals("V-03")){
@@ -38,7 +37,7 @@ public class EventiVolley{
             return true;
         }
         if(cod.equals("V-99")){
-            System.out.println(p);
+            System.out.println("\n"+p);
             return true;
         }
         return false;

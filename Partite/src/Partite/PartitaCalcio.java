@@ -47,6 +47,6 @@ public class PartitaCalcio extends AbsPartita{
 
     @Override
     public String toString() {
-        return "Risultato: "+GolCasa+"-"+GolOspiti;
+        return "Risultato: "+GolCasa+"-"+GolOspiti+"\n";
     }
 }
