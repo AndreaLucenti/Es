@@ -33,7 +33,7 @@ public class EventiCalcio {
         }
         if(cod.equals("C-99")){
             System.out.println("Fine partita");
-            System.out.println(p);
+            System.out.println(p+"\n");
             return true;
         }
         return false;

@@ -4,8 +4,8 @@ import Partite.PartitaVolley;
 
 public class EventiVolley{
 
-
     public boolean Eventi(String cod, PartitaVolley p){
+
 
         if(cod.equals("V-00")){
             return true;
@@ -37,7 +37,7 @@ public class EventiVolley{
             return true;
         }
         if(cod.equals("V-99")){
-            System.out.println("\n"+p);
+            System.out.println("Fine Partita sul punteggio di:\n"+p);
             return true;
         }
         return false;
