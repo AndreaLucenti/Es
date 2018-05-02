@@ -8,5 +8,12 @@ public class FrameSett extends JFrame {
         setSize(screenSize.width/2,screenSize.height/2);
         setLocation(screenSize.width/4,screenSize.height/4);
         setTitle("Prova");
+        Bottoni b = new Bottoni();
+        add(b);
+        pack();
+
+
+
+
     }
 }
