@@ -1,0 +1,27 @@
+Rossi	Antonio	PATO1	
+Verdi	Mario	PATO2	
+Viola	Giuseppe	PATO3	
+Bianchi	Luigi	PATO4	2
+Gialli	Andrea	PATO5	
+Neri	Marco	PATO6	
+Rossi	Antonio	PATO7	4
+Verdi	Mario	PATO8	
+Viola	Giuseppe	PATO9	
+Bianchi	Luigi	PATO1	
+Gialli	Andrea	PATO2	6
+Neri	Marco	PATO0	
+Rossi	Antonio	PATO4	
+Verdi	Mario	PATO5	
+Viola	Giuseppe	PATO6	1
+Bianchi	Luigi	PATO7	
+Gialli	Andrea	PATO8	
+Neri	Marco	PATO11	
+Rossi	Antonio	PATO1	
+Verdi	Mario	PATO2	
+Viola	Giuseppe	PATO3	
+Bianchi	Luigi	PATO4	
+Gialli	Andrea	PATO15	
+Neri	Marco	PATO6	
+Rossi	Antonio	PATO7	
+Verdi	Mario	PATO8	
+Gialli	Andrea	PATO9	

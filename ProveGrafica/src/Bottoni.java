@@ -33,9 +33,9 @@ public class Bottoni extends JPanel{
     }
 
     public class ButtonAction implements ActionListener {
-
-
+        int c;
         public ButtonAction(String Txt, JPanel p, int i){
+            c = i;
             if(i == 1){
                 txt1 = Txt;
             }
@@ -46,10 +46,12 @@ public class Bottoni extends JPanel{
 
         }
         public void actionPerformed(ActionEvent event) {
-
+            if(c == 1){
                 jb.setText(txt1);
+            }
+            else {
                 jb.setText(txt2);
-
+            }
         }
 
     }
