@@ -9,8 +9,6 @@ public class Prenotazione {
         this.nome = nome;
         this.cognome = cognome;
         this.patologia = patologia;
-        this.ora = ora;
-        this.gg = gg;
     }
 
     public String getPatologia() {
@@ -23,6 +21,23 @@ public class Prenotazione {
 
     public void setOra(String ora) {
         this.ora = ora;
+    }
+
+    public String getGg() {
+        return gg;
+    }
+
+    public String getOra() {
+        return ora;
+    }
+
+    public String getNome() {
+
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
     }
 
     @Override

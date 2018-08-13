@@ -25,6 +25,10 @@ public class Tester {
         struttura3.addFisio(f3);
         struttura3.addFisio(f4);
 
+        Vista vista = new Vista(struttura1.getAgenda());
+        vista.setSize(600,250);
+        vista.setLocation(100,100);
+        vista.setVisible(true);
         System.out.println(clinica);
     }
 }

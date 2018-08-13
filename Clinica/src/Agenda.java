@@ -32,6 +32,11 @@ public class Agenda {
       return giorni[giornoP];
     }
   }
+
+  public ArrayList<Prenotazione> getPrenotazione() {
+    return prenotazione;
+  }
+
   @Override
   public String toString() {
     String out="";
