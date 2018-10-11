@@ -20,4 +20,9 @@ public class Evento {
     public String getDescrizioneEvento() {
         return descrizioneEvento;
     }
+
+    @Override
+    public String toString() {
+        return data+"\t"+descrizioneEvento;
+    }
 }

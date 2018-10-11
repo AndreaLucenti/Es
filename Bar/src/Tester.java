@@ -3,13 +3,20 @@ import Bevande.Birra;
 
 public class Tester {
     public static void main(String[] args) {
-        Bevanda bevanda1 = new Birra("Pils", 5, 4.5);
-        Menu menu1 = new Menu();
-        Bar bar1 = new Bar(menu1,"Viale Bligny 77", "Borgo Calvenzano");
-        Elenco elenco = new Elenco();
-
-        menu1.addBevanda(bevanda1);
-        elenco.addBer(bar1);
-        System.out.println(elenco);
+        Utente utente = new Utente();
+        TextInput textInput = new TextInput(utente);
+       utente.newBar("Borgo","Viale Bligny","BRGCALV", "brg001");
+//        utente.newBar("b","vl","BRGCALV");
+//
+//        Bevanda bevanda1 = new Birra("Pils", 5, 4.5);
+//        Menu menu1 = new Menu();
+//        menu1.addBevanda(bevanda1);
+        Evento evento1 = new Evento(10,8,2018, "Party Hard");
+//
+//        utente.getBar("Borgo").addEventi(evento1);
+//        utente.getBar("Borgo").addMenu(menu1);
+//
+        textInput.TextualInput();
+        System.out.println(utente);
     }
 }
