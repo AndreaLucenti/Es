@@ -24,9 +24,10 @@ public class Menu {
     @Override
     public String toString() {
         String out = "";
-        for (Bevanda bv:bevande){
-            out = bv.toString()+"\n";
+        for (Bevanda bv : bevande){
+            out += bv.toString();
         }
+        out += "\n";
         return out;
     }
 }

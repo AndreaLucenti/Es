@@ -1,11 +1,15 @@
+import Bevande.*;
+
 import java.util.Scanner;
 public class TextInput {
+    Bar br;
     private Utente utente;
 
     public TextInput(Utente utente) {
         this.utente = utente;
     }
 
+    /** funzione per selezionare il tipo di utente **/
     public void TextualInput(){
         String input;
         do{
@@ -25,9 +29,10 @@ public class TextInput {
         return scanner.nextLine();
     }
 
+    /**funzione per gestione del bar**/
     private void TextualBar(){
         String input;
-        System.out.println("Selezionare:"+"\n"+" Nuovo Bar 1"+"\t"+"Bar Presente 2");
+        System.out.println("Selezionare:"+"\n"+"Nuovo Bar 1"+"\t"+"Bar Presente 2");
         input= keyboard();
 
         if (input.equals("1")){
@@ -39,13 +44,19 @@ public class TextInput {
         System.out.println("Inserire Id e pass");
         input = keyboard();
         String[] splitted = input.split("\\s+");
-        utente.checkIdBar(splitted[0]).Log(splitted[0],splitted[1]);
-    }
+            if(utente.checkIdBar(splitted[0]).Log(splitted[0],splitted[1])){
+                br = utente.checkIdBar(splitted[0]);
+                System.out.println("\n"+br);
+                gestBaR();
+            }else{
+                System.out.println("Error LogIn");
+            }
         }
-
+    }
+/**funzione per gestione cliente**/
     private void TextualCliente(){
         String input;
-        System.out.println("Selezionare:"+"\n"+" Nuovo Cliente 1"+"\t"+"Cliente Presente 2");
+        System.out.println("Selezionare:"+"\n"+"Nuovo Cliente 1"+"\t"+"Cliente Presente 2");
         input= keyboard();
 
         if (input.equals("1")){
@@ -59,6 +70,56 @@ public class TextInput {
             String[] splitted = input.split("\\s+");
             utente.checkIdCliente(splitted[0]).Log(splitted[0],splitted[1]);
         }
+    }
+
+    public void gestBaR(){
+        Evento ev;
+        Bevanda bv;
+        String input, in;
+        System.out.println("Selezionare:"+"\n"+"Aggiungi Evento 1"+"\t"+"Aggiungi Menu 2");
+        input= keyboard();
+
+        if (input.equals("1")){
+            System.out.println("Inserire Giorno Mese Anno Descrizione");
+            input = keyboard();
+            String[] splitted = input.split("\\s+");
+            ev = new Evento(Integer.parseInt(splitted[0]),Integer.parseInt(splitted[1]),Integer.parseInt(splitted[2]),splitted[3]);
+            br.addEventi(ev);
+        }else if(input.equals("2")){
+            System.out.println("Selezionare tipo bevanda:\t Analcolico 1\t Bibita 2\t Birra 3\t Drink 4");
+            in = keyboard();
+            switch (in) {
+                case "1":
+                    System.out.println("Inserire Nome e Prezzo");
+                    input = keyboard();
+                    String[] splitted = input.split("\\s+");
+                    bv = new Analcolico(splitted[0], Double.parseDouble(splitted[1]));
+                    br.getMenu().addBevanda(bv);
+                    break;
+                case "2":
+                    System.out.println("Inserire Nome e Prezzo");
+                    input = keyboard();
+                    splitted = input.split("\\s+");
+                    bv = new Bibita(splitted[0], Double.parseDouble(splitted[1]));
+                    br.getMenu().addBevanda(bv);
+                    break;
+                case "3":
+                    System.out.println("Inserire Nome, Prezzo e Gradazione");
+                    input = keyboard();
+                    splitted = input.split("\\s+");
+                    bv = new Birra(splitted[0], Double.parseDouble(splitted[1]), Double.parseDouble(splitted[2]));
+                    br.getMenu().addBevanda(bv);
+                    break;
+                case "4":
+                    System.out.println("Inserire Nome, Prezzo e Gradazione");
+                    input = keyboard();
+                    splitted = input.split("\\s+");
+                    bv = new Drink(splitted[0], Double.parseDouble(splitted[1]),Double.parseDouble(splitted[2]));
+                    br.getMenu().addBevanda(bv);
+                    break;
+            }
+        }
+
     }
 
 

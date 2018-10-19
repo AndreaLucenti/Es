@@ -67,6 +67,9 @@ public class Bar {
         return out;
     }
 
+    public Menu getMenu() {
+        return menu;
+    }
 
     public String getId() {
         return id;
