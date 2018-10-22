@@ -4,23 +4,23 @@ public class Bar {
     private String nome;
     private String id;
     private ArrayList<Evento> eventi;
-    private Menu menu;
+    private Menu menu = new Menu();
     private String ubicazione;
     private String pass = "Password";
-    private boolean Flogg = true;
     private boolean loggedin = false;
 
-    public Bar(String ubicazione, String nome, String id) {
+    public Bar(String nome, String ubicazione, String id, String pass) {
         this.eventi = new ArrayList<Evento>();
         this.ubicazione = ubicazione;
         this.nome = nome;
         this.id = id;
+        this.pass = pass;
     }
 
-    public boolean addEventi(Evento evento){
-        if(eventi.size() != 0){
-            for (Evento ev: eventi){
-                if(ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento())){
+    public boolean addEventi(Evento evento) {
+        if (eventi.size() != 0) {
+            for (Evento ev : eventi) {
+                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento())) {
                     return false;
                 }
             }
@@ -30,21 +30,20 @@ public class Bar {
     }
 
     //TODO mettere a posto l'input dell menù
-    public void  addMenu(Menu menu){
+    public void addMenu(Menu menu) {
         this.menu = menu;
     }
 
-    public boolean setPass(String pass, String Oldpass){
-        if(this.pass != pass && Oldpass == this.pass){
+    public boolean setPass(String pass, String Oldpass) {
+        if (this.pass != pass && Oldpass == this.pass) {
             this.pass = pass;
-            Flogg = false;
             return true;
         }
         return false;
     }
 
-    public boolean Log(String id, String pass){
-        if(this.id.equals(id) && this.pass.equals(pass) && !Flogg){
+    public boolean Log(String id, String pass) {
+        if (this.id.equals(id) && this.pass.equals(pass)) {
             loggedin = true;
             return loggedin = true;
         }
@@ -55,17 +54,6 @@ public class Bar {
         return nome;
     }
 
-    @Override
-    public String toString() {
-        String out = "";
-        if(eventi.size() == 0 || menu.equals(null)){return out;}
-        out = nome+"\t"+ubicazione+"\n"+"menu: "+menu.toString();
-        for (Evento ev: eventi){
-            out += ev.toString();
-
-        }
-        return out;
-    }
 
     public Menu getMenu() {
         return menu;
@@ -73,5 +61,33 @@ public class Bar {
 
     public String getId() {
         return id;
+    }
+
+    public Evento getEventi() {
+        for (Evento ev: eventi){
+            return ev;
+        }
+        return null;
+    }
+
+    public String barDati(){
+        String out;
+        out = nome+"\t"+ubicazione+"\t"+id+"\t"+pass;
+        return out;
+    }
+
+    @Override
+    public String toString() {
+        String out = "";
+        if (eventi.size() == 0 || menu.equals(null)) {
+            out += nome + "\t" + ubicazione + "\n";
+            return out;
+        }
+        out += nome + "\t" + ubicazione + "\n" + "menu: " + menu.toString();
+        for (Evento ev : eventi) {
+            out += ev.toString();
+
+        }
+        return out;
     }
 }

@@ -46,7 +46,9 @@ public class TextInput {
         String[] splitted = input.split("\\s+");
             if(utente.checkIdBar(splitted[0]).Log(splitted[0],splitted[1])){
                 br = utente.checkIdBar(splitted[0]);
-                System.out.println("\n"+br);
+                System.out.println("\nLogged as:\t"+br.getNome()+"\n");
+                System.out.println("Menu:\n"+br.getMenu());
+                System.out.println("Eventi:\t"+br.getEventi()+"\n");
                 gestBaR();
             }else{
                 System.out.println("Error LogIn");

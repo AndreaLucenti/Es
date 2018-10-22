@@ -10,6 +10,6 @@ public class Birra extends Bevanda{
 
     @Override
     public String toString() {
-        return super.toString()+"\t"+gradazione+"%"+"\n";
+        return super.toString()+"\t"+gradazione+"%";
     }
 }

@@ -7,4 +7,8 @@ public class Drink extends Bevanda{
         super(nome, prezzo);
         this.gradazione = gradazione;
     }
+
+    public String toString() {
+        return super.toString()+"\t"+gradazione+"%";
+    }
 }

@@ -25,9 +25,8 @@ public class Menu {
     public String toString() {
         String out = "";
         for (Bevanda bv : bevande){
-            out += bv.toString();
+            out += bv.toString()+"\n";
         }
-        out += "\n";
         return out;
     }
 }

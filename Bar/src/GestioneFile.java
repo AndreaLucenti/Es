@@ -49,7 +49,7 @@ public class GestioneFile {
     public void writeFile(String writing) {
         try {
             FileWriter writer = new FileWriter(PATH_FILE, true);
-            writer.write("\n" + writing + "\t" + getCurrentTimeStamp());
+            writer.write("\n" + writing + "\t");
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
