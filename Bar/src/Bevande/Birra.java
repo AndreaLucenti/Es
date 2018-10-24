@@ -8,6 +8,10 @@ public class Birra extends Bevanda{
         this.gradazione = gradazione;
     }
 
+    public double getGradazione() {
+        return gradazione;
+    }
+
     @Override
     public String toString() {
         return super.toString()+"\t"+gradazione+"%";

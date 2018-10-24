@@ -8,6 +8,10 @@ public class Drink extends Bevanda{
         this.gradazione = gradazione;
     }
 
+    public double getGradazione() {
+        return gradazione;
+    }
+
     public String toString() {
         return super.toString()+"\t"+gradazione+"%";
     }

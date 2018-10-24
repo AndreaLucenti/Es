@@ -2,7 +2,7 @@ import Bevande.*;
 
 import java.util.Scanner;
 public class TextInput {
-    Bar br;
+    private Bar br;
     private Utente utente;
 
     public TextInput(Utente utente) {
@@ -36,10 +36,21 @@ public class TextInput {
         input= keyboard();
 
         if (input.equals("1")){
-        System.out.println("Inserire nome ubicazione id e nuova pass");
-        input = keyboard();
-        String[] splitted = input.split("\\s+");
-        utente.newBar(splitted[0],splitted[1],splitted[2],splitted[3]);
+            System.out.println("Inserire nome:");
+            input = keyboard();
+            String Nome = input;
+            System.out.println("Inserire ubicazione:");
+            input = keyboard();
+            String Ubicazione = input;
+            System.out.println("Inserire ID:");
+            input = keyboard();
+            String id = input;
+            System.out.println("Inserire password");
+            input = keyboard();
+            String pass = input;
+            utente.newBar(Nome, Ubicazione,id, pass);
+//        String[] splitted = input.split("\\s+");
+//        utente.newBar(splitted[0],splitted[1],splitted[2],splitted[3]);
     }else if(input.equals("2")){
         System.out.println("Inserire Id e pass");
         input = keyboard();
@@ -48,7 +59,11 @@ public class TextInput {
                 br = utente.checkIdBar(splitted[0]);
                 System.out.println("\nLogged as:\t"+br.getNome()+"\n");
                 System.out.println("Menu:\n"+br.getMenu());
-                System.out.println("Eventi:\t"+br.getEventi()+"\n");
+                System.out.println("Eventi:\t");
+                for (Evento ev:br.getEventi()){
+                    System.out.println(ev);
+                }
+                System.out.println("");
                 gestBaR();
             }else{
                 System.out.println("Error LogIn");
@@ -62,10 +77,23 @@ public class TextInput {
         input= keyboard();
 
         if (input.equals("1")){
-            System.out.println("Inserire nome cognome id e nuova pass");
+            System.out.println("Inserire nome:");
             input = keyboard();
-            String[] splitted = input.split("\\s+");
-            utente.newCliente(splitted[0],splitted[1],splitted[2],splitted[3]);
+            String Nome = input;
+            System.out.println("Inserire cognome:");
+            input = keyboard();
+            String Cognome = input;
+            System.out.println("Inserire ID:");
+            input = keyboard();
+            String id = input;
+            System.out.println("Inserire password");
+            input = keyboard();
+            String pass = input;
+            utente.newCliente(Nome, Cognome, id, pass);
+
+//            String[] splitted = input.split("\\s+");
+//            utente.newCliente(splitted[0],splitted[1],splitted[2],splitted[3]);
+
         }else if(input.equals("2")){
             System.out.println("Inserire Id e pass");
             input = keyboard();
@@ -87,6 +115,7 @@ public class TextInput {
             String[] splitted = input.split("\\s+");
             ev = new Evento(Integer.parseInt(splitted[0]),Integer.parseInt(splitted[1]),Integer.parseInt(splitted[2]),splitted[3]);
             br.addEventi(ev);
+
         }else if(input.equals("2")){
             System.out.println("Selezionare tipo bevanda:\t Analcolico 1\t Bibita 2\t Birra 3\t Drink 4");
             in = keyboard();
@@ -96,28 +125,28 @@ public class TextInput {
                     input = keyboard();
                     String[] splitted = input.split("\\s+");
                     bv = new Analcolico(splitted[0], Double.parseDouble(splitted[1]));
-                    br.getMenu().addBevanda(bv);
+                    br.getMenu().addBevanda(bv, br.getId(), "ANA", null);
                     break;
                 case "2":
                     System.out.println("Inserire Nome e Prezzo");
                     input = keyboard();
                     splitted = input.split("\\s+");
                     bv = new Bibita(splitted[0], Double.parseDouble(splitted[1]));
-                    br.getMenu().addBevanda(bv);
+                    br.getMenu().addBevanda(bv, br.getId(), "BIB",null);
                     break;
                 case "3":
                     System.out.println("Inserire Nome, Prezzo e Gradazione");
                     input = keyboard();
                     splitted = input.split("\\s+");
                     bv = new Birra(splitted[0], Double.parseDouble(splitted[1]), Double.parseDouble(splitted[2]));
-                    br.getMenu().addBevanda(bv);
+                    br.getMenu().addBevanda(bv, br.getId(), "BIR", ((Birra) bv).getGradazione());
                     break;
                 case "4":
                     System.out.println("Inserire Nome, Prezzo e Gradazione");
                     input = keyboard();
                     splitted = input.split("\\s+");
                     bv = new Drink(splitted[0], Double.parseDouble(splitted[1]),Double.parseDouble(splitted[2]));
-                    br.getMenu().addBevanda(bv);
+                    br.getMenu().addBevanda(bv, br.getId(), "DRI", ((Drink) bv).getGradazione());
                     break;
             }
         }

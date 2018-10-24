@@ -13,6 +13,10 @@ public abstract class Bevanda {
         return nome;
     }
 
+    public double getPrezzo() {
+        return prezzo;
+    }
+
     @Override
     public String toString() {
         return nome+"\t"+prezzo;

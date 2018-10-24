@@ -20,7 +20,21 @@ public class Bar {
     public boolean addEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
-                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento())) {
+                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() != evento.getData()) {
+                    return false;
+                }
+            }
+        }
+        eventi.add(evento);
+        GestioneFile gestioneFile = new GestioneFile(id+".txt");
+        gestioneFile.writeFile("EV"+"\t"+evento.getGiorno()+"\t"+evento.getMese()+"\t"+evento.getAnno()
+                                        +"\t"+evento.getDescrizioneEvento());
+        return true;
+    }
+    public boolean loadEventi(Evento evento) {
+        if (eventi.size() != 0) {
+            for (Evento ev : eventi) {
+                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() != evento.getData()) {
                     return false;
                 }
             }
@@ -63,11 +77,8 @@ public class Bar {
         return id;
     }
 
-    public Evento getEventi() {
-        for (Evento ev: eventi){
-            return ev;
-        }
-        return null;
+    public ArrayList<Evento> getEventi() {
+        return eventi;
     }
 
     public String barDati(){

@@ -33,29 +33,29 @@ public class Utente {
                 case "BIR":
                     Bevanda birra = new Birra(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]),
                                                 Double.parseDouble(dati.get(i)[3]));
-                    bar.getMenu().addBevanda(birra);
+                    bar.getMenu().loadBevanda(birra);
                     break;
 
                 case "DRI":
                     Bevanda drink = new Drink(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]),
                                                 Double.parseDouble(dati.get(i)[3]));
-                    bar.getMenu().addBevanda(drink);
+                    bar.getMenu().loadBevanda(drink);
                     break;
 
                 case "BIB":
                     Bevanda bibita = new Bibita(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]));
-                    bar.getMenu().addBevanda(bibita);
+                    bar.getMenu().loadBevanda(bibita);
                     break;
 
                 case "ANA":
                     Bevanda analcolico = new Analcolico(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]));
-                    bar.getMenu().addBevanda(analcolico);
+                    bar.getMenu().loadBevanda(analcolico);
                     break;
 
                 case "EV":
                     Evento evento = new Evento(Integer.parseInt(dati.get(i)[1]), Integer.parseInt(dati.get(i)[2]),
                                                 Integer.parseInt(dati.get(i)[3]),dati.get(i)[4]);
-                    bar.addEventi(evento);
+                    bar.loadEventi(evento);
                     break;
             }
 
@@ -73,6 +73,8 @@ public class Utente {
         bar.setPass(pass, "Password");
         bars.add(bar);
         fileBar.writeFile(bar.barDati());
+        GestioneFile gestioneFile = new GestioneFile(id+".txt");
+        gestioneFile.writeFile("");
         return true;
     }
 
@@ -83,7 +85,7 @@ public class Utente {
                     return false;
                 }
             }
-        Cliente cliente = new Cliente(nome, cognome, id);
+        Cliente cliente = new Cliente(nome, cognome, id, pass);
         cliente.setPass(pass, "Password");
         clienti.add(cliente);
         return true;

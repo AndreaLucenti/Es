@@ -21,8 +21,24 @@ public class Evento {
         return descrizioneEvento;
     }
 
+    public int getGiorno() {
+        return giorno;
+    }
+
+    public int getMese() {
+        return mese;
+    }
+
+    public int getAnno() {
+        return anno;
+    }
+
+    public String getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
-        return data+"\t"+descrizioneEvento;
+        return data+"\t"+descrizioneEvento+"\n";
     }
 }

@@ -9,11 +9,11 @@ public class Cliente {
     private boolean loggedin = false;
     private boolean Flogg = true;
 
-    public Cliente(String nome, String cognome, String id) {
+    public Cliente(String nome, String cognome, String id, String pass) {
         this.nome = nome;
         this.cognome = cognome;
         this.id = id;
-        pass = "Password";
+        this.pass = pass;
 
     }
 //TODO Mettere a posto il passaggio del bar per i preferiti magari tramite gli utenti
