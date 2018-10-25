@@ -26,7 +26,7 @@ public class Bar {
             }
         }
         eventi.add(evento);
-        GestioneFile gestioneFile = new GestioneFile(id+".txt");
+        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
         gestioneFile.writeFile("EV"+"\t"+evento.getGiorno()+"\t"+evento.getMese()+"\t"+evento.getAnno()
                                         +"\t"+evento.getDescrizioneEvento());
         return true;

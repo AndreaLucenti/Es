@@ -18,7 +18,7 @@ public class Menu {
             }
         }
         bevande.add(bevanda);
-        GestioneFile gestioneFile = new GestioneFile(pathFile+".txt");
+        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+pathFile+".txt");
         if(type.equals("DRI") || type.equals("BIR")){
         gestioneFile.writeFile(type+"\t"+bevanda.getNome()+"\t"+bevanda.getPrezzo()+"\t"+grad);}
         else{

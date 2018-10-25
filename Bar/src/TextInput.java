@@ -1,8 +1,10 @@
 import Bevande.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 public class TextInput {
     private Bar br;
+    private Cliente cl;
     private Utente utente;
 
     public TextInput(Utente utente) {
@@ -98,7 +100,15 @@ public class TextInput {
             System.out.println("Inserire Id e pass");
             input = keyboard();
             String[] splitted = input.split("\\s+");
-            utente.checkIdCliente(splitted[0]).Log(splitted[0],splitted[1]);
+            if(utente.checkIdCliente(splitted[0]).Log(splitted[0],splitted[1])){
+                cl = utente.checkIdCliente(splitted[0]);
+                System.out.println("\nLogged as:\t"+"\n"+cl.getId()+"\n"+cl.getNome()+"\n"+cl.getCognome());
+                gestCliente();
+
+            }else{
+                System.out.println("Error LogIn");
+            }
+
         }
     }
 
@@ -153,6 +163,50 @@ public class TextInput {
 
     }
 
+    public void gestCliente(){
+        int i = 1;
+        System.out.println("Selezionare:"+"\n"+"Controllare i bar preferiti 1"+"\n"+"Aggiungere bar a preferiti 2");
+        String input = keyboard();
+        switch(input){
+            case "1":
+                for (Bar brpref:cl.getPreferiti()) {
+                    System.out.println(""+brpref+"\n");
+                }
+                gestPreferiti(cl.getPreferiti());
+                break;
+            case "2":
+                for (Bar elencoBar:utente.getBars()){
+                    System.out.println("BAR NUMERO: "+i+"\n"+elencoBar+"\n");
+                    i++;
+                }
+                aggPreferiti(utente.getBars());
+                break;
+        }
+    }
+
+    public void aggPreferiti(ArrayList<Bar> bars){
+        String input = keyboard();
+        if(cl.addPref(bars.get(Integer.parseInt(input)-1))) {
+            System.out.println("Aggiunto bar:\t" + bars.get(Integer.parseInt(input) - 1).getNome());
+        }
+        else{
+            System.out.println("Bar già presente tra i preferiti.");
+        }
+
+    }
+
+    public void gestPreferiti(ArrayList<Bar> bars){
+        System.out.println("Selezionare: "+"\t"+"Rimuovere preferiti 1"+"\t"+"Tornare alla selezione precedente 2");
+        String input = keyboard();
+        switch (input){
+            case "1":
+                input = keyboard();
+                cl.remPref(bars.get(Integer.parseInt(input)-1));
+                break;
+            case "2":
+                gestCliente();
+        }
+    }
 
 }
 

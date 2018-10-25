@@ -5,6 +5,8 @@ import Bevande.Birra;
 public class Tester {
     public static void main(String[] args) {
         Utente utente = new Utente();
+        utente.readBar();
+        utente.readCliente();
         TextInput textInput = new TextInput(utente);
 
 //       utente.newBar("Borgo","Viale Bligny","B", "b1");
@@ -21,8 +23,8 @@ public class Tester {
 //        utente.getBar("Borgo").addEventi(evento1);
 //       utente.getBar("Borgo").addMenu(menu1);
 //
-        utente.readBar();
+
         textInput.TextualInput();
-        System.out.println("\n"+utente);
+        //System.out.println("\n"+utente);
     }
 }

@@ -7,47 +7,83 @@ public class Cliente {
     private String pass;
     private ArrayList<Bar> preferiti;
     private boolean loggedin = false;
-    private boolean Flogg = true;
 
     public Cliente(String nome, String cognome, String id, String pass) {
         this.nome = nome;
         this.cognome = cognome;
         this.id = id;
         this.pass = pass;
+        this.preferiti = new ArrayList<Bar>();
 
     }
-//TODO Mettere a posto il passaggio del bar per i preferiti magari tramite gli utenti
-    public boolean addRemPref(Bar bar){
+
+    public boolean loadPref(Bar bar){
+        preferiti.add(bar);
+        return true;
+    }
+
+    public boolean addPref(Bar bar){
         if(preferiti.size() != 0){
             for (Bar br : preferiti){
-                if(br.getNome().equals(bar.getNome())){
-                    preferiti.remove(bar);
+                if(br.getId().equals(bar.getId())){
                     return false;
                 }
             }
         }
         preferiti.add(bar);
+        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+        gestioneFile.writeFile(bar.getId());
         return true;
     }
 
-    public String getId() {
-        return id;
+    public boolean remPref(Bar bar){
+        if(preferiti.size() != 0){
+            for (Bar br: preferiti){
+                if(br.getId().equals(bar.getId())){
+                    preferiti.remove(br);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public boolean setPass(String pass, String Oldpass){
         if(this.pass != pass && Oldpass == this.pass){
             this.pass = pass;
-            Flogg = false;
             return true;
         }
         return false;
     }
 
     public boolean Log(String id, String pass){
-        if(this.id.equals(id) && this.pass.equals(pass) && !Flogg){
+        if(this.id.equals(id) && this.pass.equals(pass)){
             loggedin = true;
             return loggedin = true;
         }
         return loggedin = false;
+    }
+
+    public String clienteDati(){
+        String out;
+        out = nome+"\t"+cognome+"\t"+id+"\t"+pass;
+        return out;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public ArrayList<Bar> getPreferiti() {
+        return preferiti;
     }
 }

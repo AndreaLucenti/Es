@@ -5,7 +5,8 @@ import java.util.*;
 public class Utente {
    private ArrayList<Bar> bars;
    private ArrayList<Cliente> clienti;
-    GestioneFile fileBar = new GestioneFile("DataBar.txt");
+    GestioneFile fileBar = new GestioneFile("src/FILETXT/DataBar.txt");
+    GestioneFile fileCliente = new GestioneFile("src/FILETXT/DataCliente.txt");
 
     public Utente() {
         this.bars = new ArrayList<Bar>();
@@ -20,13 +21,24 @@ public class Utente {
 
                 Bar bar = new Bar(datiBar.get(i)[0], datiBar.get(i)[1], datiBar.get(i)[2], datiBar.get(i)[3]);
                 bars.add(bar);
-                readDati(bar.getId(),bar);
+                readDatiBar(bar.getId(),bar);
         }
 
     }
 
-    public void readDati(String fileDati, Bar bar){
-        GestioneFile file = new GestioneFile(fileDati +".txt");
+    public void readCliente(){
+        ArrayList<String[]> datiCliente = fileCliente.readFile();
+        for(int i = 0; i < datiCliente.size(); i++){
+
+            Cliente cliente = new Cliente(datiCliente.get(i)[0], datiCliente.get(i)[1], datiCliente.get(i)[2], datiCliente.get(i)[3]);
+            clienti.add(cliente);
+            readDatiCl(cliente.getId(),cliente);
+        }
+
+    }
+
+    public void readDatiBar(String fileDati, Bar bar){
+        GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati +".txt");
         ArrayList<String[]> dati = file.readFile();
         for(int i = 0; i < dati.size(); i++) {
             switch (dati.get(i)[0]){
@@ -62,7 +74,17 @@ public class Utente {
         }
     }
 
-    public boolean newBar(String nome, String ubicazione, String id, String pass){
+    public void readDatiCl(String fileDati, Cliente cliente) {
+        GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati + ".txt");
+        ArrayList<String[]> dati = file.readFile();
+        if(dati.size() != 0) {
+            for (int i = 0; i < dati.size(); i++) {
+                cliente.loadPref(checkIdBar(dati.get(i)[0]));
+            }
+        }
+    }
+
+        public boolean newBar(String nome, String ubicazione, String id, String pass){
         if(bars.size()!=0)
         for (Bar br: bars){
             if(br.getId().equals(id) || br.getNome().equals(nome)){
@@ -73,7 +95,7 @@ public class Utente {
         bar.setPass(pass, "Password");
         bars.add(bar);
         fileBar.writeFile(bar.barDati());
-        GestioneFile gestioneFile = new GestioneFile(id+".txt");
+        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
         gestioneFile.writeFile("");
         return true;
     }
@@ -88,17 +110,16 @@ public class Utente {
         Cliente cliente = new Cliente(nome, cognome, id, pass);
         cliente.setPass(pass, "Password");
         clienti.add(cliente);
+        fileCliente.writeFile(cliente.clienteDati());
+        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+        gestioneFile.writeFile("");
         return true;
     }
 
-    public Bar getBar(String nome) {
-        for (Bar br:bars){
-            if(br.getNome().equals(nome)){
-                return br;
-            }
-        }
-        return null;
+    public ArrayList<Bar> getBars() {
+        return bars;
     }
+
     public Bar checkIdBar(String id){
         for (Bar br:bars){
             if(br.getId().equals(id)){
@@ -108,10 +129,10 @@ public class Utente {
         return null;
     }
 
-    public Bar checkIdCliente(String id){
-        for (Bar br:bars){
-            if(br.getId().equals(id)){
-                return br;
+    public Cliente checkIdCliente(String id){
+        for (Cliente cl:clienti){
+            if(cl.getId().equals(id)){
+                return cl;
             }
         }
         return null;
