@@ -3,5 +3,4 @@ DRI	Cuba	6.00	8.00
 BIB	Coca	1.50
 EV	4	5	2018	PARTY
 EV	1	2	3	DISCO	
-BIR	Weisse	4.5	5.0	
-EV	1	3	5	FF	
+BIR	Weisse	4.5	5.0

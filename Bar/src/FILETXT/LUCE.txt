@@ -1,2 +1,1 @@
-BRG
-SNT	
+SNT

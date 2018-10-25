@@ -55,6 +55,34 @@ public class GestioneFile {
             e.printStackTrace();
         }
     }
+    /**
+     *  Funzione per rimuovere una linea di testo utilizzando un nuovo file e eliminando il file vecchio
+     * @param lineRem stringa da rimuovere del file
+     */
+
+    public boolean remRow(String lineRem) {
+        File inputFile = new File(PATH_FILE);
+        File tempFile = new File("src/FILETXT/TempFile.txt");
+        try{
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+
+        String currentLine;
+
+        while ((currentLine = reader.readLine()) != null) {
+            // trim newline when comparing with lineToRemove
+            String trimmedLine = currentLine.trim();
+            if (trimmedLine.equals(lineRem)) continue;
+            writer.write(currentLine);
+        }
+        writer.close();
+        reader.close();
+        inputFile.delete();
+        boolean successful = tempFile.renameTo(inputFile);
+        return successful;
+        }catch (IOException e){e.printStackTrace();}
+        return false;
+    }
 
     /**
      * Funzione per ottenere data e ora locali.

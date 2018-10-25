@@ -17,6 +17,8 @@ public class Bar {
         this.pass = pass;
     }
 
+    //TODO creare classe per rimozione eventi e bevande
+
     public boolean addEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
@@ -41,11 +43,6 @@ public class Bar {
         }
         eventi.add(evento);
         return true;
-    }
-
-    //TODO mettere a posto l'input dell menù
-    public void addMenu(Menu menu) {
-        this.menu = menu;
     }
 
     public boolean setPass(String pass, String Oldpass) {

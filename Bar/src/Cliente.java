@@ -41,6 +41,8 @@ public class Cliente {
             for (Bar br: preferiti){
                 if(br.getId().equals(bar.getId())){
                     preferiti.remove(br);
+                    GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+                    gestioneFile.remRow(br.getId());
                     return true;
                 }
             }
