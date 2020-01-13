@@ -21,7 +21,7 @@ public class Cliente {
         preferiti.add(bar);
         return true;
     }
-
+    //todo pulire creando una nuova funzione per check pref e aggiunta
     public boolean addPref(Bar bar){
         if(preferiti.size() != 0){
             for (Bar br : preferiti){
@@ -30,6 +30,12 @@ public class Cliente {
                 }
             }
         }
+        if(preferiti.size() == 0){
+            preferiti.add(bar);
+            GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+            gestioneFile.changeFile(bar.getId());
+            return true;
+                }
         preferiti.add(bar);
         GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
         gestioneFile.writeFile(bar.getId());

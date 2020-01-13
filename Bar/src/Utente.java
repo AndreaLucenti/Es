@@ -85,6 +85,7 @@ public class Utente {
     }
 
         public boolean newBar(String nome, String ubicazione, String id, String pass){
+        //TODO GESTIONE NUOVO BAR PROBLEMA GESTIONE EV e MEN
         if(bars.size()!=0)
         for (Bar br: bars){
             if(br.getId().equals(id) || br.getNome().equals(nome)){
@@ -100,11 +101,11 @@ public class Utente {
         return true;
     }
 
-    public boolean newCliente(String nome, String cognome,String id, String pass){
+    public Cliente newCliente(String nome, String cognome,String id, String pass){
         if(clienti.size()!=0)
             for (Cliente cl: clienti){
                 if(cl.getId().equals(id)){
-                    return false;
+                    return null;
                 }
             }
         Cliente cliente = new Cliente(nome, cognome, id, pass);
@@ -112,8 +113,7 @@ public class Utente {
         clienti.add(cliente);
         fileCliente.writeFile(cliente.clienteDati());
         GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
-        gestioneFile.writeFile("");
-        return true;
+        return cliente;
     }
 
     public ArrayList<Bar> getBars() {
