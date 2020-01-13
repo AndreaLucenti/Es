@@ -56,24 +56,11 @@ public class GestioneFile {
         }
     }
     /**
-     * Funzione per la scrittura su file dei dati di interesse.
-     * @param overwriting stringa da sostituire al file.
-     */
-    public void changeFile(String overwriting) {
-        try {
-            FileWriter writer = new FileWriter(PATH_FILE, false);
-            writer.write(overwriting + "\t");
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    /**
      *  Funzione per rimuovere una linea di testo utilizzando un nuovo file e eliminando il file vecchio
      * @param lineRem stringa da rimuovere del file
      */
+
     public boolean remRow(String lineRem) {
-        int i = 0;
         File inputFile = new File(PATH_FILE);
         File tempFile = new File("src/FILETXT/TempFile.txt");
         try{
@@ -83,17 +70,10 @@ public class GestioneFile {
         String currentLine;
 
         while ((currentLine = reader.readLine()) != null) {
-            if(i == 0){
-                String trimmedLine = currentLine.trim();
-                if (trimmedLine.equals(lineRem)) continue;
-                writer.write(currentLine);
-            }
-            else {
+            // trim newline when comparing with lineToRemove
             String trimmedLine = currentLine.trim();
             if (trimmedLine.equals(lineRem)) continue;
-            writer.write("\n"+currentLine);
-            }
-            i++;
+            writer.write(currentLine);
         }
         writer.close();
         reader.close();

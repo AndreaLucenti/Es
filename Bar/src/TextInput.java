@@ -51,14 +51,13 @@ public class TextInput {
             input = keyboard();
             String pass = input;
             utente.newBar(Nome, Ubicazione,id, pass);
-            gestBaR();
 //        String[] splitted = input.split("\\s+");
 //        utente.newBar(splitted[0],splitted[1],splitted[2],splitted[3]);
     }else if(input.equals("2")){
         System.out.println("Inserire Id e pass");
         input = keyboard();
         String[] splitted = input.split("\\s+");
-            if((utente.checkIdBar(splitted[0]) != null) && utente.checkIdBar(splitted[0]).Log(splitted[0],splitted[1])){
+            if(utente.checkIdBar(splitted[0]).Log(splitted[0],splitted[1])){
                 br = utente.checkIdBar(splitted[0]);
                 System.out.println("\nLogged as:\t"+br.getNome()+"\n");
                 System.out.println("Menu:\n"+br.getMenu());
@@ -92,10 +91,7 @@ public class TextInput {
             System.out.println("Inserire password");
             input = keyboard();
             String pass = input;
-            cl = utente.newCliente(Nome, Cognome, id, pass);
-
-            System.out.println("Scegliere bar preferiti");
-            aggPreferiti(utente.getBars());
+            utente.newCliente(Nome, Cognome, id, pass);
 
 //            String[] splitted = input.split("\\s+");
 //            utente.newCliente(splitted[0],splitted[1],splitted[2],splitted[3]);
@@ -104,70 +100,33 @@ public class TextInput {
             System.out.println("Inserire Id e pass");
             input = keyboard();
             String[] splitted = input.split("\\s+");
+            if(utente.checkIdCliente(splitted[0]).Log(splitted[0],splitted[1])){
+                cl = utente.checkIdCliente(splitted[0]);
+                System.out.println("\nLogged as:\t"+"\n"+cl.getId()+"\n"+cl.getNome()+"\n"+cl.getCognome());
+                gestCliente();
 
-            if ((utente.checkIdCliente(splitted[0]) != null) && utente.checkIdCliente(splitted[0]).Log(splitted[0], splitted[1])) {
-                    cl = utente.checkIdCliente(splitted[0]);
-                    System.out.println("\nLogged as:\t" + "\n" + cl.getId() + "\n" + cl.getNome() + "\n" + cl.getCognome());
-                    gestCliente();
             }else{
                 System.out.println("Error LogIn");
             }
+
         }
     }
 
     public void gestBaR(){
+        Evento ev;
         Bevanda bv;
         String input, in;
-        int i = 1;
-        System.out.println("Selezionare:"+"\n"+"Gestione Eventi 1"+"\t"+"Gestione Menu 2");
+        System.out.println("Selezionare:"+"\n"+"Aggiungi Evento 1"+"\t"+"Aggiungi Menu 2");
         input= keyboard();
 
         if (input.equals("1")){
-            for (Evento ev:br.getEventi()){
-                System.out.println("evento"+i+":\n"+ev);
-                i++;
-            }
-            gestEventi();
+            System.out.println("Inserire Giorno Mese Anno Descrizione");
+            input = keyboard();
+            String[] splitted = input.split("\\s+");
+            ev = new Evento(Integer.parseInt(splitted[0]),Integer.parseInt(splitted[1]),Integer.parseInt(splitted[2]),splitted[3]);
+            br.addEventi(ev);
 
         }else if(input.equals("2")){
-            System.out.println(br.getMenu());
-            gestMenu();
-
-        }
-
-    }
-
-    public void gestEventi(){
-        System.out.println("Selezionare:\tAggiungere Evento 1 \tRimuovere Evento 2");
-        String input = keyboard();
-        switch (input){
-            case "1":
-                System.out.println("Inserire Giorno Mese Anno Descrizione");
-                input = keyboard();
-                String[] splitted = input.split("\\s+");
-                Evento ev = new Evento(Integer.parseInt(splitted[0]),Integer.parseInt(splitted[1]),Integer.parseInt(splitted[2]),splitted[3]);
-                br.addEventi(ev);
-                break;
-            case "2":
-                if(br.getEventi().size() == 0){
-                    System.out.println("Nessun evento da rimuovere");
-                    break;
-                }
-                System.out.println("Selezionare l'evento da rimuovere");
-                input = keyboard();
-                br.remEventi(br.getEventi().get(Integer.parseInt(input)-1));
-                break;
-        }
-    }
-
-    public void gestMenu(){
-
-        Bevanda bv;
-        String in, input;
-        System.out.println("Selezionare:\tAggiungere bevanda 1\tRimuovere bevanda 2\n");
-        input = keyboard();
-        switch (input){
-        case "1":
             System.out.println("Selezionare tipo bevanda:\t Analcolico 1\t Bibita 2\t Birra 3\t Drink 4");
             in = keyboard();
             switch (in) {
@@ -200,27 +159,8 @@ public class TextInput {
                     br.getMenu().addBevanda(bv, br.getId(), "DRI", ((Drink) bv).getGradazione());
                     break;
             }
-            break;
-            case "2":
-                System.out.println("Selezionare la bevanda da rimuovere");
-                input = keyboard();
-                bv = br.getMenu().getBevande().get(Integer.parseInt(input)-1);
-                System.out.println(bv.getClass().getTypeName());
-                if(bv instanceof Birra) {
-                    br.getMenu().remBevande(bv, br.getId(), ((Birra) bv).getGradazione());
-                }
-                else if(bv instanceof Drink){
-                br.getMenu().remBevande(bv, br.getId(), ((Drink) bv).getGradazione());
-                }
-                else if(bv instanceof Analcolico|| bv instanceof Bibita){
-                    br.getMenu().remBevande(bv, br.getId(), 0.0);
-                }
-
-                // br.getMenu().remBevande(br.getMenu().(Integer.parseInt(input)-1));
-              // br.getMenu().remBevande();
-                break;
-
         }
+
     }
 
     public void gestCliente(){
@@ -230,26 +170,21 @@ public class TextInput {
         switch(input){
             case "1":
                 for (Bar brpref:cl.getPreferiti()) {
-                    System.out.println("BAR NUMERO: "+i+"\n"+brpref+"\n");
+                    System.out.println(""+brpref+"\n");
                 }
                 gestPreferiti(cl.getPreferiti());
                 break;
             case "2":
-//                for (Bar elencoBar:utente.getBars()){
-//                    System.out.println("BAR NUMERO: "+i+"\n"+elencoBar+"\n");
-//                    i++;
-//                }
+                for (Bar elencoBar:utente.getBars()){
+                    System.out.println("BAR NUMERO: "+i+"\n"+elencoBar+"\n");
+                    i++;
+                }
                 aggPreferiti(utente.getBars());
                 break;
         }
     }
 
     public void aggPreferiti(ArrayList<Bar> bars){
-        int i = 1;
-        for (Bar elencoBar:utente.getBars()){
-            System.out.println("BAR NUMERO: "+i+"\n"+elencoBar+"\n");
-            i++;
-        }
         String input = keyboard();
         if(cl.addPref(bars.get(Integer.parseInt(input)-1))) {
             System.out.println("Aggiunto bar:\t" + bars.get(Integer.parseInt(input) - 1).getNome());
@@ -265,7 +200,6 @@ public class TextInput {
         String input = keyboard();
         switch (input){
             case "1":
-                System.out.println("Eliminare preferito numero:");
                 input = keyboard();
                 cl.remPref(bars.get(Integer.parseInt(input)-1));
                 break;

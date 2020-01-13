@@ -1,5 +1,3 @@
-import Bevande.Bevanda;
-
 import java.util.ArrayList;
 
 public class Bar {
@@ -24,7 +22,7 @@ public class Bar {
     public boolean addEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
-                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() == evento.getData()) {
+                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() != evento.getData()) {
                     return false;
                 }
             }
@@ -35,29 +33,6 @@ public class Bar {
                                         +"\t"+evento.getDescrizioneEvento());
         return true;
     }
-
-    public boolean remEventi(Evento evento){
-        if(eventi.size() != 0){
-            for (Evento ev: eventi){
-                if(ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() == evento.getData()){
-                    eventi.remove(ev);
-                    GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
-                    gestioneFile.remRow("EV"+"\t"+evento.getGiorno()+"\t"+evento.getMese()+"\t"+evento.getAnno()
-                                            +"\t"+evento.getDescrizioneEvento());
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public boolean remBevande(Bevanda bevanda, double grad){
-        menu.remBevande(bevanda, bevanda.getNome(), grad);
-        return true;
-    }
-
-
-
     public boolean loadEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
