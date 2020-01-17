@@ -1,6 +1,6 @@
-BIR	Pils	5.00	4.5
-DRI	Cuba	6.00	8.00
-BIB	Coca	1.50
+BIR	Pils	5.0	4.5
+DRI	Cuba	6.0	8.0
+BIB	Coca	1.5
 EV	4	5	2018	PARTY
-EV	1	2	3	DISCO	
+EV	1	2	3	DISCO
 BIR	Weisse	4.5	5.0

@@ -1,3 +1,5 @@
+import Bevande.Bevanda;
+
 import java.util.ArrayList;
 
 public class Bar {
@@ -18,6 +20,7 @@ public class Bar {
     }
 
     //TODO creare classe per rimozione eventi e bevande
+    //TODO CICLO POST CREAZIONE BAR
 
     public boolean addEventi(Evento evento) {
         if (eventi.size() != 0) {
@@ -33,6 +36,25 @@ public class Bar {
                                         +"\t"+evento.getDescrizioneEvento());
         return true;
     }
+    
+    public boolean remEventi(Evento evento) {
+        if (eventi.size() != 0) {
+            for (Evento ev : eventi) {
+                if (ev.getDescrizioneEvento().equals(evento.getDescrizioneEvento()) && ev.getData() == evento.getData()) {
+                    eventi.remove(evento);
+                    GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+                    gestioneFile.remRow("EV"+"\t"+evento.getGiorno()+"\t"+evento.getMese()+"\t"+evento.getAnno()
+                            +"\t"+evento.getDescrizioneEvento());
+                    return true;
+                }
+            }
+        }
+
+
+        return false;
+
+    }
+
     public boolean loadEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
@@ -60,11 +82,20 @@ public class Bar {
         }
         return loggedin = false;
     }
+    public boolean remBev(Bevanda bevanda){
+        if(menu.remBevanda(bevanda) == true){
+            GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+            System.out.println(bevanda.toString());
+            gestioneFile.remRow(bevanda.toString());
+            return true;
+        }
+        return false;
 
+
+    }
     public String getNome() {
         return nome;
     }
-
 
     public Menu getMenu() {
         return menu;
