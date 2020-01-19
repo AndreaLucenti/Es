@@ -73,7 +73,7 @@ public class GestioneFile {
             // trim newline when comparing with lineToRemove
             String trimmedLine = currentLine.trim();
             if (trimmedLine.equals(lineRem)) continue;
-            writer.write(currentLine);
+            writer.write(currentLine+"\n");
         }
         writer.close();
         reader.close();

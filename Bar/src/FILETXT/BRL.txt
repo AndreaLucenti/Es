@@ -1,0 +1,7 @@
+BIR	4 Luppoli	4.0	4.0
+ANA	Succo	5.5
+
+EV	1	1	2020	Festa	
+
+
+BIR	Guinnes	5.5	5.5	

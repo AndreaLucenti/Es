@@ -27,6 +27,18 @@ public class Menu {
         return true;
     }
 
+    public boolean remBevanda(Bevanda bevanda){
+        if(bevande.size() != 0) {
+            for (Bevanda bev : bevande) {
+                if (bev.getNome().equals(bevanda.getNome())) {
+                    bevande.remove(bevanda);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean loadBevanda(Bevanda bevanda){
         if(bevande.size() != 0){
             for (Bevanda bev : bevande){
@@ -39,13 +51,17 @@ public class Menu {
         return true;
     }
 
-
+    public ArrayList<Bevanda> getBevande() {
+        return bevande;
+    }
 
     @Override
     public String toString() {
+        int i = 1;
         String out = "";
         for (Bevanda bv : bevande){
-            out += bv.toString()+"\n";
+            out += i+")"+bv.toString()+"\n";
+            i++;
         }
         return out;
     }

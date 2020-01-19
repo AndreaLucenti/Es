@@ -44,23 +44,23 @@ public class Utente {
             switch (dati.get(i)[0]){
                 case "BIR":
                     Bevanda birra = new Birra(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]),
-                                                Double.parseDouble(dati.get(i)[3]));
+                                                Double.parseDouble(dati.get(i)[3]), dati.get(i)[0]);
                     bar.getMenu().loadBevanda(birra);
                     break;
 
                 case "DRI":
                     Bevanda drink = new Drink(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]),
-                                                Double.parseDouble(dati.get(i)[3]));
+                                                Double.parseDouble(dati.get(i)[3]), dati.get(i)[0]);
                     bar.getMenu().loadBevanda(drink);
                     break;
 
                 case "BIB":
-                    Bevanda bibita = new Bibita(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]));
+                    Bevanda bibita = new Bibita(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0]);
                     bar.getMenu().loadBevanda(bibita);
                     break;
 
                 case "ANA":
-                    Bevanda analcolico = new Analcolico(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]));
+                    Bevanda analcolico = new Analcolico(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0]);
                     bar.getMenu().loadBevanda(analcolico);
                     break;
 
