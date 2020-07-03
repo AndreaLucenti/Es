@@ -5,6 +5,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class GUI {
 
@@ -16,6 +18,7 @@ public class GUI {
     private Utente ut = new Utente();
     private Bar bar;
 
+
     public GUI(JFrame frame) {
         ut.readBar();
         ut.readCliente();
@@ -26,12 +29,46 @@ public class GUI {
                 String Pass = String.valueOf(PasswordField.getPassword());
                 String id = IDField.getText();
 
+                if(ut.checkIdBar((id)) != null){
                 if(ut.checkIdBar(id).Log(id, Pass)){
-                    GBAR gbar = new GBAR();
-                    gbar.OpenBar(frame);
+                    bar = ut.checkIdBar(id);
+                    GBAR gbar = new GBAR(frame, bar);
+                    gbar.OpenBar();
 
                 }else{
                     JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+                }}else{
+                    JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+                }
+
+            }
+        });
+        createNewAcoountButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GNewB gNewB = new GNewB(frame, ut);
+                gNewB.openNewB();
+            }
+        });
+        PasswordField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    String Pass = String.valueOf(PasswordField.getPassword());
+                    String id = IDField.getText();
+
+                    if(ut.checkIdBar((id)) != null){
+                        if(ut.checkIdBar(id).Log(id, Pass)){
+                            bar = ut.checkIdBar(id);
+                            GBAR gbar = new GBAR(frame, bar);
+                            gbar.OpenBar();
+
+                        }else{
+                            JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+                        }}else{
+                        JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+                    }
+
                 }
 
             }

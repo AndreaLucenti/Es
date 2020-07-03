@@ -41,6 +41,6 @@ public class Evento {
 
     @Override
     public String toString() {
-        return data+"\t"+descrizioneEvento+"\n";
+        return data+" "+descrizioneEvento+" ";
     }
 }

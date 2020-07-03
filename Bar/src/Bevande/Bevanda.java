@@ -23,6 +23,6 @@ public abstract class Bevanda {
 
     @Override
     public String toString() {
-        return type+"\t"+nome+"\t"+prezzo;
+        return type+" "+nome+" "+prezzo;
     }
 }
