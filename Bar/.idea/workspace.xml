@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7af11add-c837-4a59-9a6d-a256723d0ad1" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,14 +39,15 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -39,9 +58,37 @@
       <recent name="C:\Users\Luce\Documents\GitHub\Es\Bar" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GUI">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="GBAR" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Grafica.GBAR" />
+      <module name="Bar" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Grafica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Grafica.GUI" />
+      <module name="Bar" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Grafica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tester" />
@@ -84,21 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.GBAR" />
         <item itemvalue="Application.Tester" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -127,158 +164,98 @@
       <workItem from="1579213585889" duration="44000" />
       <workItem from="1579261359754" duration="2905000" />
       <workItem from="1579274625778" duration="1630000" />
+      <workItem from="1592737020153" duration="236000" />
+      <workItem from="1593596056457" duration="12745000" />
+      <workItem from="1593617617697" duration="250000" />
+      <workItem from="1593682792096" duration="5805000" />
+      <workItem from="1593697021304" duration="8830000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="811" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578926353188">
+    <state x="440" y="114" key="#Project_Structure" timestamp="1592737061325">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="811" y="430" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1578926353188" />
-    <state x="742" y="298" key="FileChooserDialogImpl" timestamp="1579277813635">
+    <state x="440" y="114" key="#Project_Structure/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1592737061325" />
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593704924192">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="742" y="298" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579277813635" />
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1579264468445">
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593704924192" />
+    <state x="765" y="246" key="#com.intellij.ide.util.MemberChooser" timestamp="1593704718354">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579264468445" />
-    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1579264468445">
+    <state x="765" y="246" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593704718354" />
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1593610959155">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579264468445" />
-    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1579264468444">
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593610959155" />
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579264468444" />
-    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1579264468445">
+    <state width="1877" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.0.center" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579264468445" />
-    <state width="1877" height="362" key="GridCell.Tab.1.bottom" timestamp="1579026027115">
+    <state width="1877" height="363" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.0.left" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579026027115" />
-    <state width="1877" height="362" key="GridCell.Tab.1.center" timestamp="1579026027115">
+    <state width="1877" height="363" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.0.right" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579026027115" />
-    <state width="1877" height="362" key="GridCell.Tab.1.left" timestamp="1579026027115">
+    <state width="1877" height="363" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1593707157289">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579026027115" />
-    <state width="1877" height="362" key="GridCell.Tab.1.right" timestamp="1579026027115">
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157289" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579026027115" />
-    <state x="463" y="186" key="SettingsEditor" timestamp="1578926519724">
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="463" y="186" key="SettingsEditor/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1578926519724" />
-    <state x="668" y="369" key="com.intellij.ide.util.TipDialog" timestamp="1579277791171">
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1593707157288">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="668" y="369" key="com.intellij.ide.util.TipDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579277791171" />
-    <state x="521" y="277" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578931174237">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="521" y="277" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1578931174237" />
-    <state x="616" y="250" key="run.anything.popup" timestamp="1578930298073">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="616" y="250" key="run.anything.popup/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1578930298073" />
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1579264459325">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1579264459325" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1593707157288" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/Cliente.java</url>
+          <url>file://$PROJECT_DIR$/src/Classi/Cliente.java</url>
           <line>44</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/Cliente.java</url>
+          <url>file://$PROJECT_DIR$/src/Classi/Cliente.java</url>
           <line>43</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/TextInput.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Bar.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Bar.java</url>
-          <line>87</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GestioneFile.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>9</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>9</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="IDField" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

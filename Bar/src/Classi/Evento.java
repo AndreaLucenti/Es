@@ -1,3 +1,5 @@
+package Classi;
+
 public class Evento {
     private int giorno;
     private int mese;

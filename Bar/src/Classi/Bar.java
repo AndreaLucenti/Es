@@ -1,3 +1,5 @@
+package Classi;
+
 import Bevande.Bevanda;
 
 import java.util.ArrayList;
@@ -19,9 +21,32 @@ public class Bar {
         this.pass = pass;
     }
 
-    //TODO creare classe per rimozione eventi e bevande
-    //TODO CICLO POST CREAZIONE BAR
+    /**
+     * Funzione per loggare come bar
+     * **/
+    public boolean Log(String id, String pass) {
+        if (this.id.equals(id) && this.pass.equals(pass)) {
+            loggedin = true;
+            return loggedin = true;
+        }
+        return loggedin = false;
+    }
 
+    /**
+     * Funzione che setta una nuova password
+     * **/
+    public boolean setPass(String pass, String Oldpass) {
+        if (this.pass != pass && Oldpass == this.pass) {
+            this.pass = pass;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Funzione per aggiungere eventi
+     * Input: evento
+     * **/
     public boolean addEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
@@ -36,7 +61,11 @@ public class Bar {
                                         +"\t"+evento.getDescrizioneEvento());
         return true;
     }
-    
+
+    /**
+     * Funzione per rimuovere eventi
+     * Input: evento
+     * **/
     public boolean remEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
@@ -55,6 +84,10 @@ public class Bar {
 
     }
 
+    /**
+     * Funzione per caricare eventi di un bar
+     * Input: evento
+     * **/
     public boolean loadEventi(Evento evento) {
         if (eventi.size() != 0) {
             for (Evento ev : eventi) {
@@ -67,21 +100,10 @@ public class Bar {
         return true;
     }
 
-    public boolean setPass(String pass, String Oldpass) {
-        if (this.pass != pass && Oldpass == this.pass) {
-            this.pass = pass;
-            return true;
-        }
-        return false;
-    }
 
-    public boolean Log(String id, String pass) {
-        if (this.id.equals(id) && this.pass.equals(pass)) {
-            loggedin = true;
-            return loggedin = true;
-        }
-        return loggedin = false;
-    }
+    /**
+     * Funzione per rimuovere una bevanda dal menu
+     * **/
     public boolean remBev(Bevanda bevanda){
         if(menu.remBevanda(bevanda) == true){
             GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
