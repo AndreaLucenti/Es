@@ -1,6 +1,7 @@
+package Classi;
+
 import Bevande.*;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class TextInput {
@@ -47,6 +48,7 @@ public class TextInput {
         return scanner.nextLine();
     }
 
+    /**Selezione nuovo bar o nuovo cliente**/
     public void nuovoUtente(){
         String input;
         do {
@@ -60,6 +62,7 @@ public class TextInput {
         } while (input.isEmpty());
     }
 
+    /**Funzione per la creazione di un nuovo cliente**/
     public void newCliente(){
         String input;
         System.out.println("Inserire nome:");
@@ -77,6 +80,7 @@ public class TextInput {
         utente.newCliente(Nome, Cognome, id, pass);
     }
 
+    /**Funzione per la creazione di un nuovo bar**/
     public void newBar(){
         String input;
         System.out.println("Inserire nome:");
@@ -91,11 +95,12 @@ public class TextInput {
         System.out.println("Inserire password");
         input = keyboard();
         String pass = input;
-        utente.newBar(Nome, Ubicazione,id, pass);
+        utente.newBar(Nome, Ubicazione, id, pass);
+        gestBaR();
+
     }
 
 
-    /**funzione per gestione del bar**/
     private void TextualBar(Bar br){
                 System.out.println("\nLogged as:\t"+br.getNome()+"\n");
                 System.out.println("Menu:\n"+br.getMenu());
@@ -105,12 +110,13 @@ public class TextInput {
                 }
                 gestBaR();
     }
-/**funzione per gestione cliente**/
+
     private void TextualCliente(Cliente cl){
                 System.out.println("\nLogged as:\t"+"\n"+cl.getId()+"\n"+cl.getNome()+"\n"+cl.getCognome());
                 gestCliente();
     }
 
+    /**funzione per gestione del bar**/
     public void gestBaR(){
         String input;
         System.out.println("Selezionare:"+"\n"+"Gestione Eventi 1"+"\n"+"Gestione Menu 2"+"\n"+"Uscire 0");
@@ -127,6 +133,7 @@ public class TextInput {
 
     }
 
+    /**funzione per gestione cliente**/
     public void gestCliente(){
         int i = 1;
         System.out.println("Selezionare:"+"\n"+"Controllare i bar preferiti 1"+"\n"+"Aggiungere bar a preferiti 2"+"\n"+"Uscire 0");
@@ -151,6 +158,7 @@ public class TextInput {
         }
     }
 
+    /**Funzione per aggiungere bar preferiti**/
     public void aggPreferiti(ArrayList<Bar> bars){
         String input = keyboard();
         if((Integer.parseInt(input)-1) == -1){
@@ -166,6 +174,7 @@ public class TextInput {
 
     }
 
+    /**Funzione per rimuovere bar preferiti**/
     public void gestPreferiti(ArrayList<Bar> bars){
         System.out.println("Selezionare: "+"\t"+"Rimuovere preferiti 1"+"\t"+"Tornare alla selezione precedente 0");
         String input = keyboard();
@@ -179,6 +188,7 @@ public class TextInput {
         }
     }
 
+    /**Funzione per la gestione degli eventi di un bar**/
     public void gestEventi() {
         Evento ev;
         String input;
@@ -208,6 +218,7 @@ public class TextInput {
 
     }
 
+    /**Funzione per la gestione del menu di un bar**/
     public void gestMenu(){
 
         Bevanda bv;

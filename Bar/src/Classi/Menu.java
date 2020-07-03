@@ -1,3 +1,5 @@
+package Classi;
+
 import Bevande.Bevanda;
 
 import java.util.ArrayList;
@@ -9,6 +11,24 @@ public class Menu {
         this.bevande = new ArrayList<Bevanda>();
     }
 
+    /**
+     * Funzione per il caricamento dell'elenco delle bevande presenti nel menu
+     * **/
+    public boolean loadBevanda(Bevanda bevanda){
+        if(bevande.size() != 0){
+            for (Bevanda bev : bevande){
+                if(bev.getNome().equals(bevanda.getNome())){
+                    return false;
+                }
+            }
+        }
+        bevande.add(bevanda);
+        return true;
+    }
+
+    /**
+     * Funzione per aggiungere una bevamda al menu se non presente
+     * **/
     public boolean addBevanda(Bevanda bevanda, String pathFile, String type, Double grad){
         if(bevande.size() != 0){
             for (Bevanda bev : bevande){
@@ -27,6 +47,9 @@ public class Menu {
         return true;
     }
 
+    /**
+     * Funzione per la rimozione di una bevanda dal menu
+     * **/
     public boolean remBevanda(Bevanda bevanda){
         if(bevande.size() != 0) {
             for (Bevanda bev : bevande) {
@@ -37,18 +60,6 @@ public class Menu {
             }
         }
         return false;
-    }
-
-    public boolean loadBevanda(Bevanda bevanda){
-        if(bevande.size() != 0){
-            for (Bevanda bev : bevande){
-                if(bev.getNome().equals(bevanda.getNome())){
-                    return false;
-                }
-            }
-        }
-        bevande.add(bevanda);
-        return true;
     }
 
     public ArrayList<Bevanda> getBevande() {

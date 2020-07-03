@@ -1,6 +1,5 @@
-import Bevande.Bevanda;
-import Bevande.Bibita;
-import Bevande.Birra;
+import Classi.TextInput;
+import Classi.Utente;
 
 public class Tester {
     public static void main(String[] args) {

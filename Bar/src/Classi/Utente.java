@@ -1,3 +1,5 @@
+package Classi;
+
 import Bevande.*;
 
 import java.util.*;
@@ -26,6 +28,8 @@ public class Utente {
 
     }
 
+    /**Funzione per leggere da file i clienti già registrati**/
+
     public void readCliente(){
         ArrayList<String[]> datiCliente = fileCliente.readFile();
         for(int i = 0; i < datiCliente.size(); i++){
@@ -36,6 +40,8 @@ public class Utente {
         }
 
     }
+
+    /**Carica i dati relativi al bar**/
 
     public void readDatiBar(String fileDati, Bar bar){
         GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati +".txt");
@@ -74,6 +80,8 @@ public class Utente {
         }
     }
 
+    /**Carica i dati relativi al cliente**/
+
     public void readDatiCl(String fileDati, Cliente cliente) {
         GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati + ".txt");
         ArrayList<String[]> dati = file.readFile();
@@ -83,7 +91,7 @@ public class Utente {
             }
         }
     }
-
+        /**Funzione per la creazione di un nuovo bar**/
         public boolean newBar(String nome, String ubicazione, String id, String pass){
         if(bars.size()!=0)
         for (Bar br: bars){
@@ -99,6 +107,8 @@ public class Utente {
         gestioneFile.writeFile("");
         return true;
     }
+
+    /**Funzione per la creazione di un nuovo cliente**/
 
     public boolean newCliente(String nome, String cognome,String id, String pass){
         if(clienti.size()!=0)
@@ -120,6 +130,7 @@ public class Utente {
         return bars;
     }
 
+    /**Funzione per il controllo dell'esistenza dell'ID del bar inserito**/
     public Bar checkIdBar(String id){
         for (Bar br:bars){
             if(br.getId().equals(id)){
@@ -128,7 +139,7 @@ public class Utente {
         }
         return null;
     }
-
+    /**Funzione per il controllo dell'esistenza dell'ID del cliente inserito**/
     public Cliente checkIdCliente(String id){
         for (Cliente cl:clienti){
             if(cl.getId().equals(id)){
