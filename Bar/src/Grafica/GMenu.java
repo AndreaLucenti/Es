@@ -24,7 +24,8 @@ public class GMenu {
         ADDBEVANDAButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GAddBev gAddBev = new GAddBev(frame, menu);
+                gAddBev.OpenBev();
             }
         });
     }
