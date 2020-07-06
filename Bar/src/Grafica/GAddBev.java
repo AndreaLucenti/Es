@@ -1,7 +1,6 @@
 package Grafica;
 
-import Bevande.Analcolico;
-import Bevande.Bevanda;
+import Bevande.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,40 +21,49 @@ public class GAddBev {
     private JFrame frame = new JFrame();
     private Bevanda bevanda;
     private Classi.Menu menu;
+    private Classi.Bar bar;
     private String type;
     private int i = 0;
 
-    public GAddBev(JFrame frame, Classi.Menu menu) {
+    public GAddBev(JFrame frame, Classi.Bar bar) {
         this.frame = frame;
-        this.menu = menu;
+        this.bar = bar;
+        this.menu = bar.getMenu();
+        type = null;
+
         salvaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Controllo();
             }
         });
+
         birraCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                i = 1;
+                type = "BIR";
             }
         });
         drinkCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                i = 2;
+                type = "DRI";
             }
         });
         analcolicoCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                i = 3;
+                type = "ANA";
             }
         });
         bibitaCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                i = 4;
+                type = "BIB";
             }
         });
     }
@@ -77,8 +85,24 @@ public class GAddBev {
 
     public void operazione(){
         if (i == 1){
-            //TODO passare dati textfield, creare bevanda, unire textf, e menu.add
+
+            bevanda = new Birra(textField1.getText(), Integer.parseInt(textField2.getText()), Double.parseDouble(textField3.getText()), "BIR");
+            menu.addBevanda(bevanda, bar.getId(), type, Double.parseDouble(textField3.getText()));
         }
+        if (i == 2){
+            bevanda = new Drink(textField1.getText(), Integer.parseInt(textField2.getText()), Double.parseDouble(textField3.getText()), "DRI");
+            menu.addBevanda(bevanda, bar.getId(), type, Double.parseDouble(textField3.getText()));
+        }
+        if (i == 3){
+            bevanda = new Analcolico(textField1.getText(), Integer.parseInt(textField2.getText()),"ANA");
+            menu.addBevanda(bevanda, bar.getId(), type, null);
+        }
+        if(i == 4){
+            bevanda = new Bibita(textField1.getText(), Integer.parseInt(textField2.getText()), "BIB");
+            menu.addBevanda(bevanda, bar.getId(), type, null);
+        }
+        GMenu gMenu = new GMenu(frame, bar);
+        gMenu.OpenMenu();
     }
 
     public void OpenBev(){

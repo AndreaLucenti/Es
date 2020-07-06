@@ -24,7 +24,8 @@ public class GEvents {
         ADDEVENTSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                GAddEv gAddEv = new GAddEv(frame, bar);
+                gAddEv.OpenEV();
             }
         });
     }
