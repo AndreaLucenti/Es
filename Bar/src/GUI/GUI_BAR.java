@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 public class GUI_BAR {
     private JButton MENUButton = new JButton("Menu");
     private JButton EVENTIButton = new JButton("Eventi");
-    private JPanel panelB = new JPanel(new GridLayout(3,1));
+    private JPanel panel = new JPanel();
+    private JPanel panelB = new JPanel(new GridLayout());
+    private JPanel panelBu = new JPanel(new GridLayout(1, 2));
     private JFrame frame;
     private Bar br;
     private JLabel id = new JLabel();
@@ -21,10 +23,14 @@ public class GUI_BAR {
 
 
     public GUI_BAR(JFrame frame, Bar br) {
-
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panelB.add(id);
-        panelB.add(MENUButton);
-        panelB.add(EVENTIButton);
+        panelB.setMaximumSize(new Dimension(200,200));
+        panel.add(panelB);
+        panelBu.add(MENUButton);
+        panelBu.add(EVENTIButton);
+        panelBu.setMaximumSize(new Dimension(300,100));
+        panel.add(panelBu);
 
         this.br = br;
         this.frame = frame;
@@ -45,7 +51,7 @@ public class GUI_BAR {
     }
 
     public void OpenBar() {
-        frame.setContentPane(panelB);
+        frame.setContentPane(panel);
 
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = tk.getScreenSize().width / 2;
@@ -59,12 +65,20 @@ public class GUI_BAR {
     }
 
     public void setEV() {
-        JPanel panelE = new JPanel(new GridLayout(3,1));
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        JPanel panelE = new JPanel(new GridLayout(2,1));
+        panelE.setMaximumSize(new Dimension(300,300));
+        JPanel panelAdd = new JPanel();
+        panelAdd.setMaximumSize(new Dimension(300,150));
+
+        frame.setContentPane(panel);
+        panel.add(panelE);
         panelE.add(id);
         panelE.add(ListEv);
-        panelE.add(ADDEVENTSButton);
+        panel.add(panelAdd);
+        panelAdd.add(ADDEVENTSButton);
 
-        frame.setContentPane(panelE);
         DefaultListModel listModel = new DefaultListModel();
         for (int i = 0; i < br.getEventi().size(); i++) {
             listModel.add(i, br.getEventi().get(i).toString());
@@ -81,11 +95,20 @@ public class GUI_BAR {
     }
 
     public void setMenu(){
-        JPanel panelM = new JPanel(new GridLayout(3,1));
-        frame.setContentPane(panelM);
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        JPanel panelM = new JPanel(new GridLayout(2,1));
+        panelM.setMaximumSize(new Dimension(300,300));
+        JPanel panelAdd = new JPanel();
+        panelAdd.setMaximumSize(new Dimension(300,150));
+
+        frame.setContentPane(panel);
+        panel.add(panelM);
+        panel.add(panelAdd);
         panelM.add(id);
         panelM.add(ListBev);
-        panelM.add(ADDBEVANDAButton);
+        panel.add(panelAdd);
+        panelAdd.add(ADDBEVANDAButton);
 
         DefaultListModel listModel = new DefaultListModel();
         for(int i = 0; i < br.getMenu().getBevande().size(); i++){

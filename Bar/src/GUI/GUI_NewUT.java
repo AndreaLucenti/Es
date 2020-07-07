@@ -49,6 +49,7 @@ public class GUI_NewUT {//TODO NUOVI UTENTI
 
 
     public void openNewUT(){
+
         panel1.add(cliente);
         panel1.add(bar);
 

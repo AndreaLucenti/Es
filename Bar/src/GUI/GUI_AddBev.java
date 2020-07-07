@@ -21,6 +21,9 @@ public class GUI_AddBev {
     private JCheckBox analcolicoCheckBox = new JCheckBox("Analcolico");
     private JCheckBox bibitaCheckBox = new JCheckBox("Bibita");
     private JPanel panel1 = new JPanel(new GridLayout(8,2));
+    private JPanel panel2 = new JPanel(new GridLayout(1,4)) ;
+    private JPanel panel3 = new JPanel(new GridLayout(1,1));
+    private JPanel panel = new JPanel();
     private JFrame frame;
     private Bevanda bevanda;
     private Classi.Menu menu;
@@ -107,19 +110,28 @@ public class GUI_AddBev {
     }
 
     public void OpenBev(){
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel1.setMaximumSize(new Dimension(600,400));
+        panel.add(panel1);
+        panel2.setMaximumSize(new Dimension(600,200));
+        panel.add(panel2);
+        panel3.setMaximumSize(new Dimension(400,100));
+        panel.add(panel3);
+
         panel1.add(nome);
         panel1.add(textField1);
         panel1.add(costo);
         panel1.add(textField2);
         panel1.add(gradazione);
         panel1.add(textField3);
-        panel1.add(birraCheckBox);
-        panel1.add(drinkCheckBox);
-        panel1.add(analcolicoCheckBox);
-        panel1.add(bibitaCheckBox);
-        panel1.add(salvaButton);
+        panel2.add(birraCheckBox);
+        panel2.add(drinkCheckBox);
+        panel2.add(analcolicoCheckBox);
+        panel2.add(bibitaCheckBox);
+        panel3.add(salvaButton);
 
-        frame.setContentPane(panel1);
+
+        frame.setContentPane(panel);
         Toolkit tk = Toolkit.getDefaultToolkit();
         int xSize = tk.getScreenSize().width/2;
         int ySize = tk.getScreenSize().height/2;

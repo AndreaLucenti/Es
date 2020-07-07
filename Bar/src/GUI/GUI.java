@@ -15,7 +15,11 @@ import java.awt.event.KeyEvent;
 public class GUI extends JPanel {
 
     private JButton createNewAcoountButton = new JButton("NEW ACCOUNT");
-    private JPanel panel1 = new JPanel(new GridLayout(3,2));
+    private JPanel panel = new JPanel();
+    private JPanel panel1 = new JPanel(new GridLayout(2,2));
+    private JPanel panel2 = new JPanel(new GridLayout(1,1));
+    private JPanel Spacepanel = new JPanel();
+    private JPanel Spacepanel2 = new JPanel();
     private JButton OKButton = new JButton("OK");
     private JTextField IDField = new JTextField();
     private JPasswordField PasswordField = new JPasswordField();
@@ -29,13 +33,24 @@ public class GUI extends JPanel {
         ut.readBar();
         ut.readCliente();
 
+        panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+        Spacepanel2.setMaximumSize(new Dimension(1,150));
+        panel.add(Spacepanel2);
+        panel1.setMaximumSize(new Dimension(600,70));
+        panel.add(panel1);
+        Spacepanel.setMaximumSize(new Dimension(1,150));
+        panel.add(Spacepanel);
+        panel2.setMaximumSize(new Dimension(600,50));
+        panel.add(panel2);
 
         panel1.add(id);
         panel1.add(IDField);
         panel1.add(pass);
         panel1.add(PasswordField);
-        panel1.add(createNewAcoountButton);
-        panel1.add(OKButton);
+        panel2.add(createNewAcoountButton);
+        panel2.add(OKButton);
+
+
 
         OKButton.addActionListener(new ActionListener() {
             @Override
@@ -92,11 +107,12 @@ public class GUI extends JPanel {
     }
 
     public static void main(String[] args){
+
         Toolkit tk = Toolkit.getDefaultToolkit();
         JFrame frame = new JFrame("APP");
         int xSize = tk.getScreenSize().width/2;
         int ySize = tk.getScreenSize().height/2;
-        frame.setContentPane(new GUI(frame).panel1);
+        frame.setContentPane(new GUI(frame).panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setSize(xSize, ySize);
