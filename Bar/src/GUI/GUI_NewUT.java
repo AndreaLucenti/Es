@@ -2,7 +2,6 @@ package GUI;
 
 import Classi.Bar;
 import Classi.Utente;
-import Grafica.GBAR;
 
 import javax.swing.*;
 import java.awt.*;

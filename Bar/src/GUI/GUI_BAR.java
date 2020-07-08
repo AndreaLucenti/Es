@@ -88,7 +88,8 @@ public class GUI_BAR {
         ADDEVENTSButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO COLLEGAMENTO
+              GUI_AddEv addEv = new GUI_AddEv(frame, br);
+               addEv.AddEv();
             }
         });
 

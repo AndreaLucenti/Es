@@ -1,7 +1,6 @@
 package GUI;
 
 import Bevande.*;
-import Grafica.GMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -105,8 +104,8 @@ public class GUI_AddBev {
             bevanda = new Bibita(textField1.getText(), Integer.parseInt(textField2.getText()), "BIB");
             menu.addBevanda(bevanda, bar.getId(), type, null);
         }
-        GMenu gMenu = new GMenu(frame, bar);
-        gMenu.OpenMenu();
+        GUI_BAR gui_bar = new GUI_BAR(frame,bar);
+        gui_bar.setMenu();
     }
 
     public void OpenBev(){
