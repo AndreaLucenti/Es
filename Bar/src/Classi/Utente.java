@@ -7,8 +7,8 @@ import java.util.*;
 public class Utente {
    private ArrayList<Bar> bars;
    private ArrayList<Cliente> clienti;
-    GestioneFile fileBar = new GestioneFile("src/FILETXT/DataBar.txt");
-    GestioneFile fileCliente = new GestioneFile("src/FILETXT/DataCliente.txt");
+    GestioneFile fileBar = new GestioneFile("./src/FILETXT/DataBar.txt");
+    GestioneFile fileCliente = new GestioneFile("./src/FILETXT/DataCliente.txt");
 
     public Utente() {
         this.bars = new ArrayList<Bar>();
@@ -44,7 +44,7 @@ public class Utente {
     /**Carica i dati relativi al bar**/
 
     public void readDatiBar(String fileDati, Bar bar){
-        GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati +".txt");
+        GestioneFile file = new GestioneFile("./src/FILETXT/"+fileDati +".txt");
         ArrayList<String[]> dati = file.readFile();
         for(int i = 0; i < dati.size(); i++) {
             switch (dati.get(i)[0]){
@@ -61,12 +61,12 @@ public class Utente {
                     break;
 
                 case "BIB":
-                    Bevanda bibita = new Bibita(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0]);
+                    Bevanda bibita = new Bibita(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0],0);
                     bar.getMenu().loadBevanda(bibita);
                     break;
 
                 case "ANA":
-                    Bevanda analcolico = new Analcolico(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0]);
+                    Bevanda analcolico = new Analcolico(dati.get(i)[1],Double.parseDouble(dati.get(i)[2]), dati.get(i)[0],0);
                     bar.getMenu().loadBevanda(analcolico);
                     break;
 
@@ -83,7 +83,7 @@ public class Utente {
     /**Carica i dati relativi al cliente**/
 
     public void readDatiCl(String fileDati, Cliente cliente) {
-        GestioneFile file = new GestioneFile("src/FILETXT/"+fileDati + ".txt");
+        GestioneFile file = new GestioneFile("./src/FILETXT/"+fileDati + ".txt");
         ArrayList<String[]> dati = file.readFile();
         if(dati.size() != 0) {
             for (int i = 0; i < dati.size(); i++) {
@@ -103,7 +103,7 @@ public class Utente {
         bar.setPass(pass, "Password");
         bars.add(bar);
         fileBar.writeFile(bar.barDati());
-        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+        GestioneFile gestioneFile = new GestioneFile("./src/FILETXT/"+id+".txt");
         gestioneFile.writeFile("");
         return true;
     }
@@ -121,7 +121,7 @@ public class Utente {
         cliente.setPass(pass, "Password");
         clienti.add(cliente);
         fileCliente.writeFile(cliente.clienteDati());
-        GestioneFile gestioneFile = new GestioneFile("src/FILETXT/"+id+".txt");
+        GestioneFile gestioneFile = new GestioneFile("./src/FILETXT/"+id+".txt");
         gestioneFile.writeFile("");
         return true;
     }

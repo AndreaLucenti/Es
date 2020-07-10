@@ -233,14 +233,14 @@ public class TextInput {
                     System.out.println("Inserire Nome e Prezzo");
                     input = keyboard();
                     String[] splitted = input.split("\\s+");
-                    bv = new Analcolico(splitted[0], Double.parseDouble(splitted[1]), "ANA");
+                    bv = new Analcolico(splitted[0], Double.parseDouble(splitted[1]), "ANA", 0);
                     br.getMenu().addBevanda(bv, br.getId(), "ANA", null);
                     break;
                 case "2":
                     System.out.println("Inserire Nome e Prezzo");
                     input = keyboard();
                     splitted = input.split("\\s+");
-                    bv = new Bibita(splitted[0], Double.parseDouble(splitted[1]), "BIB");
+                    bv = new Bibita(splitted[0], Double.parseDouble(splitted[1]), "BIB", 0);
                     br.getMenu().addBevanda(bv, br.getId(), "BIB",null);
                     break;
                 case "3":

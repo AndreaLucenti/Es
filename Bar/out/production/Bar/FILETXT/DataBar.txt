@@ -1,4 +1,3 @@
-* Ubicazione Nome ID Password *
 Borgo Calvenzano	Viale Bligny	BRG	borgo1
 San Tommaso	Via Mauro Rusconi	SNT	santom1
 Broletto	Via boh	BRL	bro1

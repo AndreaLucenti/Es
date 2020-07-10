@@ -4,7 +4,7 @@ public class Drink extends Bevanda{
     private double gradazione;
 
     public Drink(String nome, double prezzo, double gradazione, String type){
-        super(nome, prezzo, type);
+        super(nome, prezzo, type, gradazione);
         this.gradazione = gradazione;
     }
 
@@ -13,6 +13,6 @@ public class Drink extends Bevanda{
     }
 
     public String toString() {
-        return super.toString()+" "+gradazione;
+        return super.toString()+"\t"+gradazione;
     }
 }

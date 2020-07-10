@@ -3,5 +3,5 @@ DRI	Cuba	6.0	8.0
 BIB	Coca	1.5
 EV	4	5	2018	PARTY
 BIR	Weisse	4.5	5.0
-BIB	Chinotto	3.0	
 BIB	Caffe	1.0
+

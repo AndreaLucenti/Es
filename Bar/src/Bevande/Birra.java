@@ -3,8 +3,8 @@ package Bevande;
 public class Birra extends Bevanda{
     private double gradazione;
 
-    public Birra(String nome, double prezzo, double gradazione, String type){
-        super(nome, prezzo, type);
+    public Birra(String nome, double prezzo, double gradazione, String type ){
+        super(nome, prezzo, type, gradazione);
         this.gradazione = gradazione;
     }
 
@@ -14,6 +14,6 @@ public class Birra extends Bevanda{
 
     @Override
     public String toString() {
-        return super.toString()+" "+gradazione;
+        return super.toString()+"\t"+gradazione;
     }
 }

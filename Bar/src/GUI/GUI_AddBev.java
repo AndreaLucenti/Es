@@ -77,7 +77,7 @@ public class GUI_AddBev {
         if(textField1 != null && textField2 != null && i > 2){
             operazione();
         }
-        else if(textField1 != null && textField2 != null && i < 2 && textField3 != null){
+        else if(textField1 != null && textField2 != null && i < 3 && textField3 != null){
             operazione();
         }
         else{
@@ -97,11 +97,11 @@ public class GUI_AddBev {
             menu.addBevanda(bevanda, bar.getId(), type, Double.parseDouble(textField3.getText()));
         }
         if (i == 3){
-            bevanda = new Analcolico(textField1.getText(), Integer.parseInt(textField2.getText()),"ANA");
+            bevanda = new Analcolico(textField1.getText(), Integer.parseInt(textField2.getText()),"ANA", 0);
             menu.addBevanda(bevanda, bar.getId(), type, null);
         }
         if(i == 4){
-            bevanda = new Bibita(textField1.getText(), Integer.parseInt(textField2.getText()), "BIB");
+            bevanda = new Bibita(textField1.getText(), Integer.parseInt(textField2.getText()), "BIB", 0);
             menu.addBevanda(bevanda, bar.getId(), type, null);
         }
         GUI_BAR gui_bar = new GUI_BAR(frame,bar);
