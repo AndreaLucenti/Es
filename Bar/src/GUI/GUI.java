@@ -6,6 +6,7 @@ import Classi.Utente;
 
 
 import javax.swing.*;
+import javax.swing.text.html.ImageView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +15,7 @@ import java.awt.event.KeyEvent;
 
 public class GUI extends JPanel {
 
-    private JButton createNewAcoountButton = new JButton("NEW ACCOUNT");
+    private JButton createNewAcoountButton = new JButton("New Account");
     private JPanel panel = new JPanel();
     private JPanel panel1 = new JPanel(new GridLayout(2,2));
     private JPanel panel2 = new JPanel(new GridLayout(1,1));
@@ -52,6 +53,8 @@ public class GUI extends JPanel {
         panel2.add(createNewAcoountButton);
         panel2.add(OKButton);
 
+        createNewAcoountButton.setIcon(new ImageIcon("./src/Image/New.png"));
+        createNewAcoountButton.setIconTextGap(50);
 
 
         OKButton.addActionListener(new ActionListener() {

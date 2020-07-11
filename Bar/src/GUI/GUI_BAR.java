@@ -61,6 +61,9 @@ public class GUI_BAR {
         setFrame();
     }
 
+    /**
+     * Funzione che crea la tabella degli eventi di un bar
+     */
     public void setEV() {
         panel = new JPanel();
         String column[] = {"DATA", "DESCRIZIONE"};
@@ -86,12 +89,6 @@ public class GUI_BAR {
             data[i][0] = br.getEventi().get(i).getData();
             data[i][1] = br.getEventi().get(i).getDescrizioneEvento();
         }
-//
-//        DefaultListModel listModel = new DefaultListModel();
-//        for (int i = 0; i < br.getEventi().size(); i++) {
-//            listModel.add(i, br.getEventi().get(i).toString());
-//        }
-//        ListEv.setModel(listModel);
 
         ADDEVENTSButton.addActionListener(new ActionListener() {
             @Override
@@ -117,6 +114,10 @@ public class GUI_BAR {
 
     }
 
+
+    /**
+     * Funzione per la creazione della tabella del menu
+     */
     public void setMenu(){
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -145,23 +146,7 @@ public class GUI_BAR {
         panel.add(panelAdd);
         panelAdd.add(ADDBEVANDAButton);
         panelAdd.add(REMBEVANDAButton);
-//        frame.setContentPane(panel);
-//        Toolkit tk = Toolkit.getDefaultToolkit();
-//        int xSize = tk.getScreenSize().width / 2;
-//        int ySize = tk.getScreenSize().height / 2;
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.pack();
-//        frame.setSize(xSize, ySize);
-//        frame.setLocationRelativeTo(null);
-//        frame.setVisible(true);
         setFrame();
-
-
-        //  panelM.add(ListBev);
-//        DefaultListModel listModel = new DefaultListModel();
-//        for(int i = 0; i < br.getMenu().getBevande().size(); i++){
-//            listModel.add(i, br.getMenu().getBevande().get(i).toString());}
-//        ListBev.setModel(listModel);
 
         ADDBEVANDAButton.addActionListener(new ActionListener() {
             @Override

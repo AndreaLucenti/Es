@@ -11,7 +11,7 @@ import java.awt.event.ActionEvent;
 import java.util.Calendar;
 import java.util.Date;
 
-public class GUI_AddEv {//TODO PROGETTO
+public class GUI_AddEv {
     private JFrame frame;
     private JPanel panel = new JPanel();
     private JPanel panel1 = new JPanel(new GridLayout(4,2));
@@ -101,6 +101,9 @@ public class GUI_AddEv {//TODO PROGETTO
         frame.setVisible(true);
     }
 
+    /**
+     * Funzione per settare gli spinner in base alla data corrente
+     */
     public void setSpinner(){
         SpinnerModel spinnerModelA = new SpinnerNumberModel
                 (date.getYear()+1900, date.getYear() -1800, date.getYear() +2000, 1);
@@ -115,6 +118,11 @@ public class GUI_AddEv {//TODO PROGETTO
         spinG.setModel(spinnerModelG);
     }
 
+    /**
+     * Funzione per il controllo della correttezza della data per il nuovo evento
+     * @return true se la data è corretta
+     * @return false se la data è inesistente
+     */
     public boolean checkDate(){
         if((m == 11 || m == 4 || m == 6 ||m == 9) &&
                 g == 31) {
