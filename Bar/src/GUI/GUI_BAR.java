@@ -26,18 +26,10 @@ public class GUI_BAR {
     private JButton ADDBEVANDAButton = new JButton("ADD BEVANDA");
     private JButton REMEVENTOButton = new JButton("REM EVENTO");
     private JButton REMBEVANDAButton = new JButton("REM BEVANDA");
-    private JList ListBev = new JList();
 
 
     public GUI_BAR(JFrame frame, Bar br) {
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panelB.add(id);
-        panelB.setMaximumSize(new Dimension(200,200));
-        panel.add(panelB);
-        panelBu.add(MENUButton);
-        panelBu.add(EVENTIButton);
-        panelBu.setMaximumSize(new Dimension(300,100));
-        panel.add(panelBu);
+
 
         this.br = br;
         this.frame = frame;
@@ -58,42 +50,48 @@ public class GUI_BAR {
     }
 
     public void OpenBar() {
-        frame.setContentPane(panel);
-
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = tk.getScreenSize().width / 2;
-        int ySize = tk.getScreenSize().height / 2;
-        panelB.setSize(xSize, ySize);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setSize(xSize, ySize);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panelB.add(id);
+        panelB.setMaximumSize(new Dimension(200,200));
+        panel.add(panelB);
+        panelBu.add(MENUButton);
+        panelBu.add(EVENTIButton);
+        panelBu.setMaximumSize(new Dimension(300,100));
+        panel.add(panelBu);
+        setFrame();
     }
 
     public void setEV() {
-        JPanel panel = new JPanel();
+        panel = new JPanel();
+        String column[] = {"DATA", "DESCRIZIONE"};
+        String data[][] = new String[br.getEventi().size()][2];
+
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         JPanel panelE = new JPanel(new GridLayout(2,1));
         panelE.setMaximumSize(new Dimension(300,300));
         JPanel panelAdd = new JPanel(new GridLayout(1,2));
         panelAdd.setMaximumSize(new Dimension(300,50));
+        JTable table = new JTable(data,column);
+        JScrollPane scrollPane = new JScrollPane(table);
 
-        frame.setContentPane(panel);
         panel.add(panelE);
         panelE.add(id);
-        panelE.add(ListEv);
+        panelE.add(scrollPane);
         panel.add(panelAdd);
         panelAdd.add(ADDEVENTSButton);
         panelAdd.add(REMEVENTOButton);
-        Evento evento;
+        setFrame();
 
-
-        DefaultListModel listModel = new DefaultListModel();
-        for (int i = 0; i < br.getEventi().size(); i++) {
-            listModel.add(i, br.getEventi().get(i).toString());
+        for(int i = 0; i < br.getEventi().size(); i++){
+            data[i][0] = br.getEventi().get(i).getData();
+            data[i][1] = br.getEventi().get(i).getDescrizioneEvento();
         }
-        ListEv.setModel(listModel);
+//
+//        DefaultListModel listModel = new DefaultListModel();
+//        for (int i = 0; i < br.getEventi().size(); i++) {
+//            listModel.add(i, br.getEventi().get(i).toString());
+//        }
+//        ListEv.setModel(listModel);
 
         ADDEVENTSButton.addActionListener(new ActionListener() {
             @Override
@@ -109,7 +107,7 @@ public class GUI_BAR {
                 if(ListEv.getSelectedIndex() == -1){
                     JOptionPane.showMessageDialog(null,"PLEASE SELECT EVENT");
                 }else {
-                    Evento evento1 = br.getEventi().get(ListEv.getSelectedIndex());
+                    Evento evento1 = br.getEventi().get(table.getSelectedRow());
                     br.remEventi(evento1);
                     setEV();
                 }
@@ -120,7 +118,7 @@ public class GUI_BAR {
     }
 
     public void setMenu(){
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         JPanel panelM = new JPanel(new GridLayout(1,1));
@@ -147,16 +145,16 @@ public class GUI_BAR {
         panel.add(panelAdd);
         panelAdd.add(ADDBEVANDAButton);
         panelAdd.add(REMBEVANDAButton);
-        frame.setContentPane(panel);
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = tk.getScreenSize().width / 2;
-        int ySize = tk.getScreenSize().height / 2;
-        panelB.setSize(xSize, ySize);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setSize(xSize, ySize);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+//        frame.setContentPane(panel);
+//        Toolkit tk = Toolkit.getDefaultToolkit();
+//        int xSize = tk.getScreenSize().width / 2;
+//        int ySize = tk.getScreenSize().height / 2;
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.pack();
+//        frame.setSize(xSize, ySize);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+        setFrame();
 
 
         //  panelM.add(ListBev);
@@ -186,6 +184,19 @@ public class GUI_BAR {
 
             }
         });
+
+    }
+
+    public void setFrame(){
+        frame.setContentPane(panel);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = tk.getScreenSize().width / 2;
+        int ySize = tk.getScreenSize().height / 2;
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setSize(xSize, ySize);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
 
     }
 }

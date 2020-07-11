@@ -1,7 +1,9 @@
 package GUI;
 
 import Classi.Bar;
+import Classi.Cliente;
 import Classi.Utente;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,11 +27,13 @@ public class GUI extends JPanel {
     private JLabel pass = new JLabel("PASSWORD");
     private Utente ut = new Utente();
     private Bar bar;
+    private Cliente cliente;
 
 
     public GUI(JFrame frame) {
         ut.readBar();
         ut.readCliente();
+
 
         panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
         Spacepanel2.setMaximumSize(new Dimension(1,150));
@@ -64,9 +68,21 @@ public class GUI extends JPanel {
 
                     }else{
                         JOptionPane.showMessageDialog(null,"Wrong Password or Id");
-                    }}else{
+                    }
+                }else if(ut.checkIdCliente(id) != null){
+                    if (ut.checkIdCliente(id).Log(id, Pass)){
+                        cliente = ut.checkIdCliente(id);
+                        GUI_CLIENTE gui_cliente = new GUI_CLIENTE(frame,cliente, ut);
+                        gui_cliente.openCl();
+                    }
+                }
+                else if(ut.checkIdCliente(id) == null && ut.checkIdBar((id)) == null){
                     JOptionPane.showMessageDialog(null,"Wrong Password or Id");
                 }
+
+//                else{
+//                    JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+//                }
 
             }
         });
@@ -94,13 +110,19 @@ public class GUI extends JPanel {
 
                         }else{
                             JOptionPane.showMessageDialog(null,"Wrong Password or Id");
-                        }}else{
+                        }}else if(ut.checkIdCliente(id) != null){
+                        if (ut.checkIdCliente(id).Log(id, Pass)){
+                            cliente = ut.checkIdCliente(id);
+                            GUI_CLIENTE gui_cliente = new GUI_CLIENTE(frame,cliente, ut);
+                            gui_cliente.openCl();
+                        }
+                    }
+                    else if(ut.checkIdCliente(id) == null && ut.checkIdBar((id)) == null){
                         JOptionPane.showMessageDialog(null,"Wrong Password or Id");
+                    }
                     }
 
                 }
-
-            }
         });
     }
 
@@ -116,6 +138,8 @@ public class GUI extends JPanel {
         frame.setSize(xSize, ySize);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+
     }
 
 }
