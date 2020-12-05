@@ -47,12 +47,6 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="225" />
-    <option name="y" value="-10" />
-    <option name="width" value="785" />
-    <option name="height" value="835" />
-  </component>
   <component name="ProjectId" id="1WLQDsUi4qm8rjGILQD8Xfh9iBo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -65,7 +59,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Bar_jar/Bar.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Bar_jar" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -254,6 +248,9 @@
       <workItem from="1594375596661" duration="13152000" />
       <workItem from="1594462149307" duration="305000" />
       <workItem from="1594462564339" duration="9000" />
+      <workItem from="1601115706048" duration="666000" />
+      <workItem from="1601125016964" duration="6037000" />
+      <workItem from="1601141488932" duration="2516000" />
     </task>
     <servers />
   </component>
@@ -293,10 +290,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="834" y="424" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1594040525924" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1594024998418">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1601125026431">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1594024998418" />
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601125026430" />
     <state width="1877" height="228" key="GridCell.Tab.0.bottom" timestamp="1594462412786">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -337,6 +334,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1918" height="276" key="javadoc.popup/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1594032586892" />
+    <state x="342" y="160" key="new project wizard" timestamp="1601115768921">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="342" y="160" key="new project wizard/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601115768921" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
