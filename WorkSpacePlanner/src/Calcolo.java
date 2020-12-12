@@ -1,4 +1,5 @@
 import BHO.Vincoli;
+import SetRoom.Room;
 
 import java.util.ArrayList;
 

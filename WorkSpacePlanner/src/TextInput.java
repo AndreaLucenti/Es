@@ -1,26 +1,91 @@
-import Arredamento.Armadio;
-import Arredamento.Mobili;
-import Arredamento.Tavolo;
+import Arredamento.*;
 import BHO.Porta;
 import BHO.Vincoli;
 import BHO.Finestra;
 import BHO.Termosifone;
+import SetRoom.Room;
+import SetRoom.SalaRiunioni;
+import SetRoom.UfficioSingolo;
+import SetRoom.Utilizzo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TextInput {
     private Room room;
+    private ArrayList<Mobili> mobili;
 
     public TextInput(Room room) {
         this.room = room;
+        mobili = new ArrayList<Mobili>();
+
     }
 
     public void TextualIn() {
+        lettFile();
 
-            Dim();
-            Vincoli();
-            Mob();
+        String input;
+        String[] splitted;
+        System.out.println("[INSERIRE SCALA RAPPRESENTAZIONE]");
+        input = keyboard();
+        splitted = input.split("\\s");
+        room.SetScala(Integer.parseInt(splitted[0]));
 
+        Dim();
+        Vincoli();
+        Util();
+       // Mob();
+
+    }
+    /**FUNZIONE PER SELEZIONARE L?UTILIZZO DELLA STANZA**/
+
+    public void Util(){
+        String input;
+        String[] splitted;
+
+        System.out.println("[SELEZIONARE UTILIZZO]\n[SALA RIUNIONI - UFFICIO SINGOLO]");
+        input = keyboard();
+        splitted = input.split("\\s");
+
+        switch (input) {
+            case "1":
+                Utilizzo salaR = new SalaRiunioni();
+                room.setUtilizzo(salaR);
+                ImportPreSet();
+                break;
+            case "2":
+                Utilizzo uffS = new UfficioSingolo();
+                room.setUtilizzo(uffS);
+                ImportPreSet();
+                break;
+        }
+    }
+    // TODO SISTEMARE CICLI IF
+    public void ImportPreSet(){
+        System.out.println("[1 PER IMPORTARE IL PRE-SET DEI MOBILI]");
+        String input = keyboard();
+        String[] splitted = input.split("\\s");
+
+        if (!splitted[0].isEmpty() && splitted.length == 1){
+
+            if(splitted[0].equals("1")){
+                room.addPreSet();
+                System.out.println("[1 PER AGGIUNGERE ALTRI MOBILI]");
+                input = keyboard();
+                splitted = input.split("\\s");
+
+                if(splitted[0].equals("1")){
+                    Mob();
+                }
+            }
+            else{
+                Mob();
+            }
+
+        }
+        else{
+            System.out.println("ERRORE");
+        }
     }
 
     /**
@@ -53,6 +118,8 @@ public class TextInput {
         }
     }
 
+
+
     /**
      // VINCOLI PER I LATI LASCIARE VUOTO SE NON CI SONO
      **/
@@ -78,17 +145,17 @@ public class TextInput {
                     }
 
                     switch (splitted[i]){
-                        case "FINESTRA":
+                        case "1":
                             Vincoli finestra = new Finestra((i+1),Integer.parseInt(splitted[j+1]));
                             room.setVin(finestra);
                             break;
 
-                        case "TERMOSIFONE":
+                        case "2":
                             Vincoli termosifone = new Termosifone((i+1),Integer.parseInt(splitted[j+1]));
                             room.setVin(termosifone);
                             break;
 
-                        case "PORTA":
+                        case "3":
                             Vincoli porta = new Porta((i+1), Integer.parseInt(splitted[j+1]));
                             room.setVin(porta);
                             break;
@@ -107,30 +174,74 @@ public class TextInput {
             String input;
             String[] splitted;
 
-            System.out.println("[INSERIRE I MOBILI DESIDERATI LE DIMENSIONI E IL NUMERO]\n(TAVOLO ARMADIO)");
+            System.out.println("[INSERIRE I MOBILI DESIDERATI E IL NUMERO]\n"); //(TAVOLO ARMADIO CASSETTIERA LIBRERIA)**/");
+
+            for(int i = 0; i < mobili.size(); i++){
+                System.out.println(i+1+") "+mobili.get(i));
+            }
+
             input = keyboard();
             splitted = input.split("\\s");
+            int i = Integer.parseInt(splitted[0])-1;
 
-            while (!splitted[0].isEmpty()) {
-                if (Double.parseDouble(splitted[1]) <= 0 || Double.parseDouble(splitted[2]) <= 0 || Integer.parseInt(splitted[3]) <= 0) {
+           if(!splitted[0].isEmpty()) {
+                if (Double.parseDouble(splitted[0]) <= 0 || Double.parseDouble(splitted[1]) <= 0) {
                     System.out.println("ERRORE DATI INSERITI");
-                    break;
-                }
+                }else {
+                    // TODO SISTEMARE SCELTA
 
-                switch (splitted[0]) {
-                    case "ARMADIO":
-                        Mobili armadio = new Armadio(Double.parseDouble(splitted[1]), Double.parseDouble(splitted[2]), Integer.parseInt(splitted[3]));
-                        room.setMob(armadio);
-                        break;
-
-                    case "TAVOLO":
-                        Mobili tavolo = new Tavolo(Double.parseDouble(splitted[1]), Double.parseDouble(splitted[2]), Integer.parseInt(splitted[3]));
-                        room.setMob(tavolo);
-                        break;
+                    switch (mobili.get(i).getClass().getSimpleName()) {
+                        case "Armadio":
+                            Mobili armadio = new Armadio(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                            room.setMob(armadio);
+                            break;
+                        case "Scrivania":
+                            Mobili scrivania = new Scrivania(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                            room.setMob(scrivania);
+                            break;
+                        case "Cassettiera":
+                            Mobili cass = new Cassettiera(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                            room.setMob(cass);
+                            break;
+                        case "Libreria":
+                            Mobili lib = new Libreria(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                            room.setMob(lib);
+                            break;
+                    }
                 }
+            }
+
+            for(int j = 0; j < room.getMobili().size(); j++){
+                System.out.println(room.getMobili().get(j));
             }
     }
 
+    //TODO RISOLVERE IL PROBLEMA DEL PATHFILE e trovare dove metterle la funzione
+    private  void lettFile(){
+        GestioneFile gf = new GestioneFile("C:\\Users\\Luce\\OneDrive\\Documenti\\GitHub\\Es\\WorkSpacePlanner\\src\\TxtFile\\Elenco.txt");
+        ArrayList<String[]> line = gf.readFile();
+
+        for(int i =0; i < line.size(); i++){
+                switch (line.get(i)[0]){
+                    case "SCRIVANIA":
+                        Mobili scrivania = new Scrivania(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        mobili.add(scrivania);
+                        break;
+                    case "CASSETTIERA":
+                        Mobili cass = new Cassettiera(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        mobili.add(cass);
+                        break;
+                    case "ARMADIO":
+                        Mobili armadio = new Armadio(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        mobili.add(armadio);
+                        break;
+                    case "LIBRERIA":
+                        Mobili libr = new Libreria(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        mobili.add(libr);
+                        break;
+                }
+        }
+    }
 
     private String keyboard() {
         Scanner scanner = new Scanner(System.in);

@@ -1,3 +1,5 @@
+import SetRoom.Room;
+
 public class Tester {
     public static void main(String[] args) {
         Room room = new Room();
