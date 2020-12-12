@@ -2,7 +2,7 @@ package Arredamento;
 
 public abstract class Mobili {
     private int dim_x, dim_y;
-    private int num;
+    private int num = 0;
 
     public Mobili(int dim_x,int dim_y,int num) {
         this.dim_x = dim_x;
@@ -22,7 +22,11 @@ public abstract class Mobili {
         return num;
     }
 
-    abstract String getNome();
+    public abstract String getNome();
+
+    public void setNum(int num){
+        this.num += num;
+    }
 
 //TODO METTERE A POSTO I TO STRING
     @Override

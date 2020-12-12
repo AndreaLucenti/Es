@@ -34,7 +34,7 @@ public class TextInput {
         Dim();
         Vincoli();
         Util();
-       // Mob();
+
 
     }
     /**FUNZIONE PER SELEZIONARE L?UTILIZZO DELLA STANZA**/
@@ -115,6 +115,8 @@ public class TextInput {
 
         if(check != 1) {
             room.SetDimension(splitted);
+        }else{
+            Dim();
         }
     }
 
@@ -170,6 +172,7 @@ public class TextInput {
     /**
      // MOBILI PER LA STANZA
      **/
+    // TODO CONTROLLARE SE VA BENE L'ADDIZIONE DEL NUMERO E PERCHE AGGIUNGE NUOVI MOBILI
     public void Mob(){
             String input;
             String[] splitted;
@@ -184,32 +187,37 @@ public class TextInput {
             splitted = input.split("\\s");
             int i = Integer.parseInt(splitted[0])-1;
 
-           if(!splitted[0].isEmpty()) {
+           if(!splitted[0].isEmpty() && splitted.length == 2) {
                 if (Double.parseDouble(splitted[0]) <= 0 || Double.parseDouble(splitted[1]) <= 0) {
                     System.out.println("ERRORE DATI INSERITI");
                 }else {
-                    // TODO SISTEMARE SCELTA
-
-                    switch (mobili.get(i).getClass().getSimpleName()) {
-                        case "Armadio":
-                            Mobili armadio = new Armadio(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
-                            room.setMob(armadio);
-                            break;
-                        case "Scrivania":
-                            Mobili scrivania = new Scrivania(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
-                            room.setMob(scrivania);
-                            break;
-                        case "Cassettiera":
-                            Mobili cass = new Cassettiera(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
-                            room.setMob(cass);
-                            break;
-                        case "Libreria":
-                            Mobili lib = new Libreria(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
-                            room.setMob(lib);
-                            break;
+                    if(room.checkMob(mobili.get(i).getNome(), Integer.parseInt(splitted[1])) == 1) {
+                    }
+                    else{
+                        switch (mobili.get(i).getClass().getSimpleName()) {
+                            case "Armadio":
+                                Mobili armadio = new Armadio(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                room.setMob(armadio);
+                                break;
+                            case "Scrivania":
+                                Mobili scrivania = new Scrivania(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                room.setMob(scrivania);
+                                break;
+                            case "Cassettiera":
+                                Mobili cass = new Cassettiera(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                room.setMob(cass);
+                                break;
+                            case "Libreria":
+                                Mobili lib = new Libreria(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                room.setMob(lib);
+                                break;
+                        }
                     }
                 }
-            }
+            }else{
+               System.out.println("[INSERIRE NUMERO DESIDERATO]");
+               Mob();
+           }
 
             for(int j = 0; j < room.getMobili().size(); j++){
                 System.out.println(room.getMobili().get(j));
@@ -218,7 +226,7 @@ public class TextInput {
 
     //TODO RISOLVERE IL PROBLEMA DEL PATHFILE e trovare dove metterle la funzione
     private  void lettFile(){
-        GestioneFile gf = new GestioneFile("C:\\Users\\Luce\\OneDrive\\Documenti\\GitHub\\Es\\WorkSpacePlanner\\src\\TxtFile\\Elenco.txt");
+        GestioneFile gf = new GestioneFile(".\\src\\TxtFile\\Elenco.txt");
         ArrayList<String[]> line = gf.readFile();
 
         for(int i =0; i < line.size(); i++){

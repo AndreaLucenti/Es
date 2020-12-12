@@ -15,4 +15,7 @@ public class Scrivania extends Mobili {
     public String getNome() {
         return nome;
     }
+
+
+
 }

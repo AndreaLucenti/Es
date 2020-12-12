@@ -9,7 +9,7 @@ public class Libreria extends Mobili{
 
     @Override
     public String toString() {
-        return  super.toString()+"Libreria"+ "Num: "+getNum();
+        return  super.toString()+"Libreria "+ "Num: "+getNum();
     }
 
     @Override

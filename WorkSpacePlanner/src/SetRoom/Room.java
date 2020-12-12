@@ -56,4 +56,18 @@ public class Room {
             mobili.add(utilizzo.getMobili().get(i));
         }
     }
+
+    public int checkMob(String nome, int num){
+        int check = 0;
+        for(int i = 0; i < mobili.size(); i++){
+            if (mobili.get(i).getNome().equals(nome)){
+                mobili.get(i).setNum(num);
+                check = 1;
+            }
+            else{}
+
+
+        }
+        return check;
+    }
 }
