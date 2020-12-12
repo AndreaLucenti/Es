@@ -73,6 +73,10 @@ public class GUI_AddBev {
         });
     }
 
+    /**
+     * Funzione per il controllo della compilazione dei campi per l'aggiunta di una bevanda
+     *
+     */
     public void Controllo(){
         if(textField1 != null && textField2 != null && i > 2){
             operazione();
@@ -86,6 +90,9 @@ public class GUI_AddBev {
 
     }
 
+    /**
+     * Funzione per Aggiungere una nuova bevanda al menu del bar
+     */
     public void operazione(){
         if (i == 1){
 

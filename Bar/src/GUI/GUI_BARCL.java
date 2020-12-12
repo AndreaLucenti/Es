@@ -33,9 +33,10 @@ public class GUI_BARCL {
         Id.setText(""+cliente.getNome()+" "+cliente.getCognome());
     }
 
+    /**
+     * Funzione per visualizzare i bar preferiti con la possibilità di rimuoverli o visualizzare il menu e gli eventi
+     */
     public void setPREF(){
-
-
 
         DefaultListModel listModel = new DefaultListModel();
         for (int i = 0; i < preferiti.size(); i++) {
@@ -81,6 +82,9 @@ public class GUI_BARCL {
         });
     }
 
+    /**
+     * Funzione che elenca i bar
+     */
     public void setBRCL(){
         bars = ut.getBars();
 
@@ -116,6 +120,10 @@ public class GUI_BARCL {
         });
     }
 
+    /**
+     * Funzione per visualizzare gli eventi e il menu di un bar con la possibiòità di aggiungerlo ai preferiti
+     * @param barI indice del bar selzionato da aprire
+     */
     public void opBars(int barI) {
         panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -178,6 +186,10 @@ public class GUI_BARCL {
 
     }
 
+    /**
+     * Funzione che richiama la funzione per la rimozione di un bar dai preferiti
+     * @param barI indice del bar preferito selezionato da rimuovere
+     */
     public void remPref(int barI){
         cliente.remPref(preferiti.get(barI));
         setPREF();
