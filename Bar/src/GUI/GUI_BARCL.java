@@ -140,7 +140,7 @@ public class GUI_BARCL {
 
         JLabel label1 = new JLabel("EVENTI");
 
-        panel.add(panel3);
+
 
 
         String column[] = {"DATA", "DESCRIZIONE"};
@@ -152,7 +152,6 @@ public class GUI_BARCL {
 
         JTable table1 = new JTable(data, column);
         JScrollPane scrollPane = new JScrollPane(table1);
-        panel.add(panelE);
         panelE.add(label1);
         panelE.add(scrollPane);
 
@@ -170,9 +169,12 @@ public class GUI_BARCL {
         panelM.setMaximumSize(new Dimension(300, 150));
         JLabel label2 = new JLabel("MENU");
         JScrollPane scrollPane2 = new JScrollPane(table2);
+
+        panel.add(panel3);
         panelM.add(label2);
         panelM.add(scrollPane2);
         panel.add(panelM);
+        panel.add(panelE);
         panel.add(panel4);
         setFrame();
 
