@@ -3,8 +3,8 @@ package Arredamento;
 public class Libreria extends Mobili{
     private String nome = "LIBRERIA";
 
-    public Libreria(int dim_x, int dim_y, int num) {
-        super(dim_x, dim_y, num);
+    public Libreria(int dim_x, int dim_y) {
+        super(dim_x, dim_y);
     }
 
     @Override

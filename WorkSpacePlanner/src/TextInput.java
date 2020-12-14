@@ -8,6 +8,9 @@ import SetRoom.SalaRiunioni;
 import SetRoom.UfficioSingolo;
 import SetRoom.Utilizzo;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -196,19 +199,23 @@ public class TextInput {
                     else{
                         switch (mobili.get(i).getClass().getSimpleName()) {
                             case "Armadio":
-                                Mobili armadio = new Armadio(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                Mobili armadio = new Armadio(mobili.get(i).getDim_x(), mobili.get(i).getDim_y());
+                                armadio.setNum(Integer.parseInt(splitted[1]));
                                 room.setMob(armadio);
                                 break;
                             case "Scrivania":
-                                Mobili scrivania = new Scrivania(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                Mobili scrivania = new Scrivania(mobili.get(i).getDim_x(), mobili.get(i).getDim_y());
+                                scrivania.setNum(Integer.parseInt(splitted[1]));
                                 room.setMob(scrivania);
                                 break;
                             case "Cassettiera":
-                                Mobili cass = new Cassettiera(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                Mobili cass = new Cassettiera(mobili.get(i).getDim_x(), mobili.get(i).getDim_y());
+                                cass.setNum(Integer.parseInt(splitted[1]));
                                 room.setMob(cass);
                                 break;
                             case "Libreria":
-                                Mobili lib = new Libreria(mobili.get(i).getDim_x(), mobili.get(i).getDim_y(), Integer.parseInt(splitted[1]));
+                                Mobili lib = new Libreria(mobili.get(i).getDim_x(), mobili.get(i).getDim_y());
+                                lib.setNum(Integer.parseInt(splitted[1]));
                                 room.setMob(lib);
                                 break;
                         }
@@ -226,25 +233,28 @@ public class TextInput {
 
     //TODO RISOLVERE IL PROBLEMA DEL PATHFILE e trovare dove metterle la funzione
     private  void lettFile(){
-        GestioneFile gf = new GestioneFile(".\\src\\TxtFile\\Elenco.txt");
-        ArrayList<String[]> line = gf.readFile();
+
+        Path currentDir = Paths.get(".");
+        System.out.println("\n"+currentDir.toAbsolutePath());
+        GestioneFile cc = new GestioneFile(".\\src\\FILETXT\\Elenco.txt");
+        ArrayList<String[]> line = cc.readFile();
 
         for(int i =0; i < line.size(); i++){
                 switch (line.get(i)[0]){
                     case "SCRIVANIA":
-                        Mobili scrivania = new Scrivania(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        Mobili scrivania = new Scrivania(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]));
                         mobili.add(scrivania);
                         break;
                     case "CASSETTIERA":
-                        Mobili cass = new Cassettiera(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        Mobili cass = new Cassettiera(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]));
                         mobili.add(cass);
                         break;
                     case "ARMADIO":
-                        Mobili armadio = new Armadio(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        Mobili armadio = new Armadio(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]));
                         mobili.add(armadio);
                         break;
                     case "LIBRERIA":
-                        Mobili libr = new Libreria(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]),1);
+                        Mobili libr = new Libreria(Integer.parseInt(line.get(i)[1]),Integer.parseInt(line.get(i)[2]));
                         mobili.add(libr);
                         break;
                 }

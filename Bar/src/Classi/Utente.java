@@ -2,6 +2,8 @@ package Classi;
 
 import Bevande.*;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Utente {
@@ -18,6 +20,8 @@ public class Utente {
     /**Funzione per leggere da file i bar già registrati**/
 
     public void readBar(){
+        Path currentDir = Paths.get(".");
+        System.out.println(currentDir.toAbsolutePath());
         ArrayList<String[]> datiBar = fileBar.readFile();
         for(int i = 0; i < datiBar.size(); i++){
 

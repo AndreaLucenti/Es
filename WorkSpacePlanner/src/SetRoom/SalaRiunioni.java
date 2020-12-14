@@ -16,8 +16,10 @@ public class SalaRiunioni extends Utilizzo{
     }
 
     private void PredMobili(){
-        Mobili sedia = new Sedia(1,1,6);
-        Mobili tavolo = new Scrivania(2,6,1);
+        Mobili sedia = new Sedia(1,1);
+        sedia.setNum(6);
+        Mobili tavolo = new Scrivania(2,6);
+        tavolo.setNum(1);
         mobili.add(sedia);
         mobili.add(tavolo);
     }
