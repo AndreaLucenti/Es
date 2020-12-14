@@ -233,9 +233,7 @@ public class TextInput {
 
     //TODO RISOLVERE IL PROBLEMA DEL PATHFILE e trovare dove metterle la funzione
     private  void lettFile(){
-
-        Path currentDir = Paths.get(".");
-        System.out.println("\n"+currentDir.toAbsolutePath());
+        
         GestioneFile cc = new GestioneFile(".\\src\\FILETXT\\Elenco.txt");
         ArrayList<String[]> line = cc.readFile();
 
