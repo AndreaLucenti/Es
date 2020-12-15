@@ -3,8 +3,8 @@ package Arredamento;
 public class Sedia extends Mobili{
     private String nome = "SEDIA";
 
-    public Sedia(int dim_x, int dim_y) {
-        super(dim_x, dim_y);
+    public Sedia(int dim_x, int dim_y, String id) {
+        super(dim_x, dim_y, id);
     }
 
     @Override
@@ -12,8 +12,4 @@ public class Sedia extends Mobili{
         return super.toString()+"Sedia "+"Num: "+getNum();
     }
 
-    @Override
-    public String getNome() {
-        return nome;
-    }
 }

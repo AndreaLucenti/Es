@@ -3,8 +3,8 @@ package Arredamento;
 public class Cassettiera extends Mobili{
     private String nome = "CASSETTIERA";
 
-    public Cassettiera(int dim_x, int dim_y) {
-        super(dim_x, dim_y);
+    public Cassettiera(int dim_x, int dim_y,String id) {
+        super(dim_x, dim_y, id);
     }
 
     @Override
@@ -12,7 +12,4 @@ public class Cassettiera extends Mobili{
         return  super.toString()+"Cassettiera "+"Num: "+getNum();
     }
 
-    public String getNome() {
-        return nome;
-    }
 }

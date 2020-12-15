@@ -1,6 +1,6 @@
 package SetRoom;
 
-import BHO.Vincoli;
+import Vin.Vincoli;
 import Arredamento.Mobili;
 
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class Room {
     public int checkMob(String nome, int num){
         int check = 0;
         for(int i = 0; i < mobili.size(); i++){
-            if (mobili.get(i).getNome().equals(nome)){
+            if (mobili.get(i).getId().equals(nome)){
                 mobili.get(i).setNum(num);
                 check = 1;
             }

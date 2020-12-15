@@ -17,11 +17,11 @@ public class UfficioSingolo extends Utilizzo{
     }
 
     public void PredMobili(){
-        Mobili sedia = new Sedia(1,1);
+        Mobili sedia = new Sedia(1,1,"SD001");
         sedia.setNum(1);
-        Mobili tavolo = new Scrivania(120, 60);
+        Mobili tavolo = new Scrivania(120, 60,"SC003");
         tavolo.setNum(1);
-        Mobili armadio = new Armadio(1,5);
+        Mobili armadio = new Armadio(80,45, "AM001");
         armadio.setNum(2);
         mobili.add(sedia);
         mobili.add(tavolo);

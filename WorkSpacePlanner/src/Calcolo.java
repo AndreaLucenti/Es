@@ -1,4 +1,4 @@
-import BHO.Vincoli;
+import Vin.Vincoli;
 import SetRoom.Room;
 
 import java.util.ArrayList;

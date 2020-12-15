@@ -3,10 +3,12 @@ package Arredamento;
 public abstract class Mobili {
     private int dim_x, dim_y;
     private int num = 0;
+    private String id;
 
-    public Mobili(int dim_x,int dim_y) {
+    public Mobili(int dim_x,int dim_y, String id) {
         this.dim_x = dim_x;
         this.dim_y = dim_y;
+        this.id = id;
     }
 
     public int getDim_x() {
@@ -21,7 +23,9 @@ public abstract class Mobili {
         return num;
     }
 
-    public abstract String getNome();
+    public String getId() {
+        return id;
+    }
 
     public void setNum(int num){
         this.num += num;
