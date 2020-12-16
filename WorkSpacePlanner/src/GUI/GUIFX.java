@@ -15,8 +15,8 @@ public class GUIFX extends Application {
     @Override
     public void start(Stage primaryStage) {
         Group root = new Group(); // the root is Group or Pane
-        Scene scene = new Scene(root, 500, 500, Color.BLACK);
-        primaryStage.setTitle("JavaFX Demo");
+        Scene scene = new Scene(root, 500, 500, Color.DARKGRAY);
+        primaryStage.setTitle("WSP Demo");
         primaryStage.setScene(scene);
         primaryStage.show();
 
