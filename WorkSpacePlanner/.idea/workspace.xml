@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -43,20 +43,27 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/Java/javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RunManager" selected="Application.GUIFX">
     <configuration name="GUIFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUI.GUIFX" />
       <module name="WorkSpacePlanner" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Luce\Downloads\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.base" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -74,6 +81,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.GUIFX" />
+      <item itemvalue="Application.Tester" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUIFX" />
@@ -95,6 +106,7 @@
       <workItem from="1607966398945" duration="611000" />
       <workItem from="1608027327421" duration="5120000" />
       <workItem from="1608117221899" duration="1335000" />
+      <workItem from="1608128902897" duration="10581000" />
     </task>
     <servers />
   </component>
@@ -114,33 +126,58 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1607954689026">
+    <state x="693" y="208" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608140956290">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1607954689026" />
-    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1608031644155">
+    <state x="693" y="208" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608140956290" />
+    <state x="740" y="245" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1608137656090">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608031644155" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1608122737207">
+    <state x="740" y="245" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608137656090" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1608134813368">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608122737207" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1608122737206">
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608134813368" />
+    <state x="778" y="481" key="DetectedRootsChooserDialog" timestamp="1608140908759">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608122737206" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1608122737206">
+    <state x="778" y="481" key="DetectedRootsChooserDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608140908759" />
+    <state x="740" y="281" key="FileChooserDialogImpl" timestamp="1608140907289">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608122737206" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1608122737206">
+    <state x="740" y="281" key="FileChooserDialogImpl/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608140907289" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1608141428056">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608122737206" />
-    <state x="461" y="185" key="SettingsEditor" timestamp="1608031652189">
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608141428056" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1608141428056">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="461" y="185" key="SettingsEditor/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608031652189" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608141428056" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1608141428056">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608141428056" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1608141428056">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608141428056" />
+    <state x="625" y="244" key="NewModule_or_Project.wizard" timestamp="1608130627223">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="625" y="244" key="NewModule_or_Project.wizard/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608130627223" />
+    <state x="461" y="185" key="SettingsEditor" timestamp="1608140912021">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1459" y="185" key="SettingsEditor/0.0.1920.1080/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1608131005317" />
+    <state x="461" y="185" key="SettingsEditor/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608140912021" />
+    <state x="685" y="502" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1608137247018">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="685" y="502" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608137247018" />
+    <state x="342" y="160" key="new project wizard" timestamp="1608139514466">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="342" y="160" key="new project wizard/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1608139514466" />
   </component>
 </project>
