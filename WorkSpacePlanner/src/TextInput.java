@@ -1,4 +1,7 @@
 import Arredamento.*;
+import Gestione.AllMob;
+import Gestione.GestioneFile;
+import Gestione.Preferiti;
 import Vin.Porta;
 import Vin.Vincoli;
 import Vin.Finestra;
@@ -14,15 +17,18 @@ import java.util.Scanner;
 public class TextInput {
     private Room room;
     private ArrayList<Mobili> mobili;
+    private AllMob allMob;
 
     public TextInput(Room room) {
         this.room = room;
         mobili = new ArrayList<Mobili>();
+        allMob = new AllMob();
 
     }
 
     public void TextualIn() {
-        lettFile();
+
+        mobili = allMob.getMobili();
 
         String input;
         String[] splitted;
@@ -250,34 +256,6 @@ public class TextInput {
 
         for(int k = 0; k < splitted.length; k++){
             System.out.println(preferiti.getPreferiti().get(k));
-        }
-    }
-
-    //TODO trovare dove metterle la funzione
-    private  void lettFile(){
-
-        GestioneFile cc = new GestioneFile(".\\src\\FILETXT\\Elenco.txt");
-        ArrayList<String[]> line = cc.readFile();
-
-        for(int i =0; i < line.size(); i++){
-                switch (line.get(i)[0]){
-                    case "Scrivania":
-                        Mobili scrivania = new Scrivania(Integer.parseInt(line.get(i)[2]),Integer.parseInt(line.get(i)[3]), line.get(i)[1]);
-                        mobili.add(scrivania);
-                        break;
-                    case "Cassettiera":
-                        Mobili cass = new Cassettiera(Integer.parseInt(line.get(i)[2]),Integer.parseInt(line.get(i)[3]),line.get(i)[1]);
-                        mobili.add(cass);
-                        break;
-                    case "Armadio":
-                        Mobili armadio = new Armadio(Integer.parseInt(line.get(i)[2]),Integer.parseInt(line.get(i)[3]),line.get(i)[1]);
-                        mobili.add(armadio);
-                        break;
-                    case "Libreria":
-                        Mobili libr = new Libreria(Integer.parseInt(line.get(i)[2]),Integer.parseInt(line.get(i)[3]),line.get(i)[1]);
-                        mobili.add(libr);
-                        break;
-                }
         }
     }
 

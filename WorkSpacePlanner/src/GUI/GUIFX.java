@@ -1,5 +1,6 @@
 package GUI;
 
+import SetRoom.Room;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Group;
@@ -14,6 +15,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class GUIFX extends Application {
+    private Room room = new Room();
 
     public static void main(String[] args) {
         launch(args);
@@ -29,28 +31,16 @@ public class GUIFX extends Application {
             BorderPane root = new BorderPane(); // the root is Group or Pane
             root.setStyle("-fx-background-color: #000000");
 
-
-
-
-//        BorderPane setting = new BorderPane();
-//        setting.setPrefSize(width/4, height/3);
-//        setting.setStyle("-fx-background-color: chartreuse");
-
-            LeftTab leftTab = new LeftTab();
+            LeftTab leftTab = new LeftTab(room);
             leftTab.setPrefSize(width / 3, height / 3);
 
+            //TODO CREARE CLASS
             BorderPane view = new BorderPane();
             view.setPrefSize(width, height);
             view.setStyle("-fx-background-color: aliceblue");
 
-            BorderPane topbar = new BorderPane();
-            topbar.setPrefSize(width, 40);
-            topbar.setStyle("-fx-background-color: blue");
+            TopTab topbar = new TopTab();
 
-        Button ut = new Button("OOOOOOOH");
-
-
-        leftTab.setTop(ut);
             root.setLeft(leftTab);
             root.setCenter(view);
             root.setTop(topbar);

@@ -1,3 +1,5 @@
+package Gestione;
+
 import Vin.Vincoli;
 import SetRoom.Room;
 

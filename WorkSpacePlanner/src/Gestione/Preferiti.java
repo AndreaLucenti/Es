@@ -1,3 +1,5 @@
+package Gestione;
+
 import Arredamento.Mobili;
 
 import java.util.ArrayList;

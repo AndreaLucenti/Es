@@ -45,7 +45,11 @@ public class Room {
         return vincoli;
     }
 
-    public void setMob(Mobili mob){mobili.add(mob);}
+    public void setMob(Mobili mob) {
+        if (checkMob(mob.getId(), 1) == 0) {
+            mobili.add(mob);
+        }
+    }
 
     public ArrayList<Mobili> getMobili() {
         return mobili;
