@@ -15,6 +15,9 @@ public class SalaRiunioni extends Utilizzo{
         PredMobili();
     }
 
+    /**
+     * Set predefiniti di mobili relativi all'utilizzo della stanza
+     **/
     private void PredMobili(){
         Mobili sedia = new Sedia(1,1, "SD001");
         sedia.setNum(6);

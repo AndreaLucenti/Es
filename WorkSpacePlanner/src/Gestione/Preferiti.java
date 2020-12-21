@@ -4,8 +4,12 @@ import Arredamento.Mobili;
 
 import java.util.ArrayList;
 
+/**
+ * Classe per la gestione e il salvataggio dei mobili preferiti
+ */
 //TODO GESTIRE I PREFERITI
 public class Preferiti {
+
     private ArrayList<Mobili> preferiti;
 
     public Preferiti() {

@@ -17,6 +17,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -27,9 +29,12 @@ public class LeftTab extends BorderPane {
     private ArrayList<Mobili> mobili = new ArrayList<Mobili>();
     private Room room;
     private Utilizzo utilizzo;
+    private PopUp popUp;
+    private Stage primaryStage;
 
-    public LeftTab(Room room) {
+    public LeftTab(Room room, Stage primaryStage) {
         this.room = room;
+        this.primaryStage = primaryStage;
         this.screensize = Toolkit.getDefaultToolkit().getScreenSize() ;
         this.setStyle("-fx-background-color: slategray");
         this.setPrefSize((screensize.width/2)/3, (screensize.height/2)/3);
@@ -55,7 +60,7 @@ public class LeftTab extends BorderPane {
         });
 
         MenuButton ev = new MenuButton();
-        ev.setText("Eventi");
+        ev.setText("Vincoli");
         ev.setStyle("-fx-background-color: #ffffff;");
         ev.setPrefSize(tilepane.getPrefWidth(),screensize.height/100);
         ev.setOnAction(event -> {
@@ -82,7 +87,7 @@ public class LeftTab extends BorderPane {
         //ScrollPane scrollPane = new ScrollPane();
         //this.getChildren().add(scrollPane);
     }
-//TODO SISTEMARE SOMMA MOBILI
+
     public void setMob( MenuButton mob){
 
         mobili = allMob.getMobili();
@@ -108,13 +113,19 @@ public class LeftTab extends BorderPane {
         ut.getItems().addAll(SalaR,UffS);
 
         SalaR.setOnAction(event -> {
-        utilizzo = new SalaRiunioni();
-        room.setUtilizzo(utilizzo);
+            popUp = new PopUp(room);
+            utilizzo = new SalaRiunioni();
+            room.setUtilizzo(utilizzo);
+            popUp.popUtil();
+            popUp.getPopup().show(primaryStage);
         });
 
         UffS.setOnAction(event -> {
+            popUp = new PopUp(room);
             utilizzo = new UfficioSingolo();
             room.setUtilizzo(utilizzo);
+            popUp.popUtil();
+            popUp.getPopup().show(primaryStage);
         });
 
     }

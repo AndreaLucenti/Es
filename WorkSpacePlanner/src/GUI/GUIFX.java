@@ -29,15 +29,18 @@ public class GUIFX extends Application {
             double height = screenSize.getHeight() / 2;
 
             BorderPane root = new BorderPane(); // the root is Group or Pane
-            root.setStyle("-fx-background-color: #000000");
+            //root.setStyle("-fx-background-color: #000000");
 
-            LeftTab leftTab = new LeftTab(room);
+            LeftTab leftTab = new LeftTab(room, primaryStage);
             leftTab.setPrefSize(width / 3, height / 3);
 
             //TODO CREARE CLASS
-            BorderPane view = new BorderPane();
+            RightTab view = new RightTab();
             view.setPrefSize(width, height);
-            view.setStyle("-fx-background-color: aliceblue");
+           // view.setStyle("-fx-background-color: aliceblue");
+           // view.setGridLinesVisible(true);
+
+
 
             TopTab topbar = new TopTab();
 

@@ -12,6 +12,9 @@ public class AllMob {
         lettFile();
     }
 
+    /**
+     * Lettura del file per l'import dei mobili disponibili
+     **/
     private  void lettFile(){
 
         GestioneFile cc = new GestioneFile(".\\src\\FILETXT\\Elenco.txt");

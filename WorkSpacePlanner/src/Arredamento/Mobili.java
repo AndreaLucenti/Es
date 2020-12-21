@@ -27,6 +27,10 @@ public abstract class Mobili {
         return id;
     }
 
+    /**
+    * Incrementa il numero dei mobili presenti
+     * @param num numero da sommare
+    * **/
     public void setNum(int num){
         this.num += num;
     }
@@ -34,6 +38,6 @@ public abstract class Mobili {
 //TODO METTERE A POSTO I TO STRING
     @Override
     public String toString() {
-        return "Mobili -> ";
+        return "";
     }
 }

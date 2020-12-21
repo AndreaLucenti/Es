@@ -16,6 +16,9 @@ public class UfficioSingolo extends Utilizzo{
         PredMobili();
     }
 
+    /**
+     * Set predefiniti di mobili relativi all'utilizzo della stanza
+     **/
     public void PredMobili(){
         Mobili sedia = new Sedia(1,1,"SD001");
         sedia.setNum(1);
